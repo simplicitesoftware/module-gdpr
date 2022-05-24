@@ -1450,6 +1450,12 @@ paths:
         type: string
         required: false
       - in: query
+        name: gdprPacPiaId__gdprPacId
+        description: Search filter for Processing Activity|Processing Activities Processing
+          Activity ID
+        type: integer
+        required: false
+      - in: query
         name: gdprPacPiaId__gdprPacName
         description: Search filter for Sub-process name
         type: string
@@ -1872,6 +1878,11 @@ paths:
         type: string
         required: false
       - in: query
+        name: gdprActorPacPacId__gdprPacId
+        description: Search filter for Processing Activity Processing Activity ID
+        type: integer
+        required: false
+      - in: query
         name: gdprActorPacPacId__gdprPacName
         description: Search filter for Sub-process name
         type: string
@@ -1955,6 +1966,11 @@ paths:
       - in: query
         name: gdprPacPvdEntPacPvdId
         description: Search filter for Private Data
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntPacPvdId__gdprPacPvdUid
+        description: Search filter for Personal Data sim pac pvd UID
         type: string
         required: false
       - in: query
@@ -3952,13 +3968,13 @@ paths:
         type: string
         required: false
       - in: query
-        name: gdprPiaRisquesModifsEval
-        description: Search filter for sim PIarisques modifs eval
+        name: gdprPiAaccesEvalComment
+        description: Search filter for sim PIaacces eval comment
         type: string
         required: false
       - in: query
-        name: gdprPiAaccesEvalComment
-        description: Search filter for sim PIaacces eval comment
+        name: gdprPiaRisquesModifsEval
+        description: Search filter for sim PIarisques modifs eval
         type: string
         required: false
       - in: query
@@ -4002,6 +4018,12 @@ paths:
         name: gdprPacPiaId
         description: Search filter for Processing Activity|Processing Activities
         type: string
+        required: false
+      - in: query
+        name: gdprPacPiaId__gdprPacId
+        description: Search filter for Processing Activity|Processing Activities Processing
+          Activity ID
+        type: integer
         required: false
       - in: query
         name: gdprPacPiaId__gdprPacName
@@ -6813,6 +6835,9 @@ definitions:
       gdprActorPacActorId__usr_last_name:
         description: Last name
         type: string
+      gdprActorPacPacId__gdprPacId:
+        description: Processing Activity Processing Activity ID
+        type: integer
       gdprActorPacPacId__gdprPacName:
         description: Sub-process name
         type: string
@@ -7032,6 +7057,10 @@ definitions:
         - COR
         - AM
         - ACE
+      gdprPacPiaId__gdprPacId:
+        description: Processing Activity|Processing Activities Processing Activity
+          ID
+        type: integer
       gdprPiaPrincPropEval:
         description: sim PIAprinc prop eval
         type: string
@@ -7609,6 +7638,10 @@ definitions:
         - COR
         - AM
         - ACE
+      gdprPacPiaId__gdprPacId:
+        description: Processing Activity|Processing Activities Processing Activity
+          ID
+        type: integer
       gdprPiaPrincPropEval:
         description: sim PIAprinc prop eval
         type: string
@@ -7847,6 +7880,9 @@ definitions:
         type: string
       row_id:
         description: Unique technical row ID
+        type: string
+      gdprPacPvdEntPacPvdId__gdprPacPvdUid:
+        description: Personal Data sim pac pvd UID
         type: string
       gdprPacPvdEntEntId__gdprEntName:
         description: Entity Business Unit Name
