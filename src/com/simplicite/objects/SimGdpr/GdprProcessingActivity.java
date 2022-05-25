@@ -12,30 +12,25 @@ public class GdprProcessingActivity extends ObjectDB {
 	
 	
 	@Override
-	public String getUserKeyLabel(String[] row) {
-		return getFieldValue("simPacName", row) + " (" + getFieldValue("simPcsName", row)+")";
-	}
-	
-	@Override
 	public void initCreate() {
 		
-		getField("simPacDateMaj").setVisible(ObjectField.VIS_NOT);
-		getFieldArea("SimProcessingActivity-4").setVisible(false);
-		getFieldArea("SimProcessingActivity-5").setVisible(false);
-		getFieldArea("SimProcessingActivity-6").setVisible(false);
-		getFieldArea("SimProcessingActivity-7").setVisible(false);
-		getFieldArea("SimProcessingActivity-8").setVisible(false);
+		getField("gdprPacDateMaj").setVisibility(ObjectField.VIS_NOT);
+		getFieldArea("GdprProcessingActivity-4").setVisible(false);
+		getFieldArea("GdprProcessingActivity-5").setVisible(false);
+		getFieldArea("GdprProcessingActivity-6").setVisible(false);
+		getFieldArea("GdprProcessingActivity-7").setVisible(false);
+		getFieldArea("GdprProcessingActivity-8").setVisible(false);
 	}
 	
 	@Override
 	public void initUpdate() {
 		
-		getField("simPacDateMaj").setVisible(ObjectField.VIS_BOTH);
-		getFieldArea("SimProcessingActivity-4").setVisible(true);
-		getFieldArea("SimProcessingActivity-5").setVisible(true);
-		getFieldArea("SimProcessingActivity-6").setVisible(true);
-		getFieldArea("SimProcessingActivity-7").setVisible(true);
-		getFieldArea("SimProcessingActivity-8").setVisible(true);
+		getField("gdprPacDateMaj").setVisibility(ObjectField.VIS_BOTH);
+		getFieldArea("GdprProcessingActivity-4").setVisible(true);
+		getFieldArea("GdprProcessingActivity-5").setVisible(true);
+		getFieldArea("GdprProcessingActivity-6").setVisible(true);
+		getFieldArea("GdprProcessingActivity-7").setVisible(true);
+		getFieldArea("GdprProcessingActivity-8").setVisible(true);
 	}
 	
 	@Override
@@ -44,7 +39,7 @@ public class GdprProcessingActivity extends ObjectDB {
 		List<String> msgs = new ArrayList<>();
 		
 		if(isNew()){
-	        setFieldValue("simPacRef", Tool.getCurrentMonth() + "-" + "0000");
+	        setFieldValue("gdprPacRef", Tool.getCurrentMonth() + "-" + "0000");
 		}
 		return msgs;
 	}
@@ -52,12 +47,12 @@ public class GdprProcessingActivity extends ObjectDB {
 	@Override
 	public String preCreate() {
 		
-		String numDossier = getGrant().simpleQuery("select count(*) from sim_processingactivity");
+		String numDossier = getGrant().simpleQuery("select count(*) from gdpr_processing_activity");
 	    String num = ("0000" + numDossier).substring(numDossier.length());
-	    setFieldValue("simPacRef", Tool.getCurrentMonth() + "-" + num);
+	    setFieldValue("gdprPacRef", Tool.getCurrentMonth() + "-" + num);
 	
-		setFieldValue("simPacDateCrea", Tool.getCurrentDate());
-	    setFieldValue("simPacDateMaj", Tool.getCurrentDate());
+		setFieldValue("gdprPacDateCrea", Tool.getCurrentDate());
+	    setFieldValue("gdprPacDateMaj", Tool.getCurrentDate());
 			
 		return null;
 	}
@@ -70,10 +65,10 @@ public class GdprProcessingActivity extends ObjectDB {
 		
 		Grant g = getGrant();
 		
-		ObjectDB actorPacObject = g.getTmpObject("SimActorPac");
-		actorPacObject.setFieldValue("simActorPacActorId", g.getUserUniqueId());
-		actorPacObject.setFieldValue("simActorPacPacId", getRowId());
-		actorPacObject.setFieldValue("simActorType", "RESP");
+		ObjectDB actorPacObject = g.getTmpObject("GdprActorPac");
+		actorPacObject.setFieldValue("gdprActorPacActorId", g.getUserUniqueId());
+		actorPacObject.setFieldValue("gdprActorPacPacId", getRowId());
+		actorPacObject.setFieldValue("gdprActorType", "RESP");
 		actorPacObject.create();
 		
 		return null;
@@ -84,25 +79,25 @@ public class GdprProcessingActivity extends ObjectDB {
 		
 		Grant g = getGrant();
 		
-		setFieldValue("simPacCompFinal", checkCompletionOfArea("SimProcessingActivity-5"));
-		setFieldValue("simPacCompFinal", checkCompletionOfArea("SimProcessingActivity-6"));
+		setFieldValue("gdprPacCompFinal", checkCompletionOfArea("GdprProcessingActivity-5"));
+		setFieldValue("gdprPacCompSecurity", checkCompletionOfArea("GdprProcessingActivity-6"));
 		
 		//Check in the N-N there is a reference to the current Processing activity
-		Integer countActor = Integer.parseInt(g.simpleQuery("select count(*) from SIM_ACTORPAC where SIM_ACTORPACPAC_ID = "+getRowId()));
-		setFieldValue("simPacCompActor", countActor>0);
+		Integer countActor = Integer.parseInt(g.simpleQuery("select count(*) from gdpr_actor_pac where gdpr_actor_pac_pac_id = "+getRowId()));
+		setFieldValue("gdprPacCompActor", countActor>0);
 		
-		Integer countData = Integer.parseInt(g.simpleQuery("select count(*) from SIM_PAC_PVD where PACPVD_PAC_ID = "+getRowId()));
-		setFieldValue("simPacCompData", countData>0);
+		Integer countData = Integer.parseInt(g.simpleQuery("select count(*) from gdpr_pac_pvd where pacpvd_pac_id = "+getRowId()));
+		setFieldValue("gdprPacCompData", countData>0);
 		
-		Integer countDest = Integer.parseInt(g.simpleQuery("select count(*) from SIM_RECEPPAC where SIM_RECEPPACPAC_ID = "+getRowId()));
-		setFieldValue("simPacCompDest", countDest>0);		
+		Integer countDest = Integer.parseInt(g.simpleQuery("select count(*) from gdpr_recep_pac where gdpr_recep_pac_pac_id = "+getRowId()));
+		setFieldValue("gdprPacCompDest", countDest>0);		
 		
 		List<String> completionList = new ArrayList<>();
-		completionList.add(getFieldValue("simPacCompFinal"));
-		completionList.add(getFieldValue("simPacCompActor"));
-		completionList.add(getFieldValue("simPacCompSecurity"));
-		completionList.add(getFieldValue("simPacCompData"));
-		completionList.add(getFieldValue("simPacCompDest"));
+		completionList.add(getFieldValue("gdprPacCompFinal"));
+		completionList.add(getFieldValue("gdprPacCompActor"));
+		completionList.add(getFieldValue("gdprPacCompSecurity"));
+		completionList.add(getFieldValue("gdprPacCompData"));
+		completionList.add(getFieldValue("gdprPacCompDest"));
 		
 		int globalCompletion = 0;
 		for(String item : completionList){
@@ -111,7 +106,7 @@ public class GdprProcessingActivity extends ObjectDB {
 		}
 		
 		int compPercentage = (globalCompletion/5)*100;
-		setFieldValue("simPacCompGlobal", compPercentage);
+		setFieldValue("gdprPacCompGlobal", compPercentage);
 		
 		return null;
 	}

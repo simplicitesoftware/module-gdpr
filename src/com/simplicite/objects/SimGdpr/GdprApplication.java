@@ -10,9 +10,4 @@ import com.simplicite.util.tools.*;
 public class GdprApplication extends ObjectDB {
 	private static final long serialVersionUID = 1L;
 	
-	@Override
-	public String getUserKeyLabel(String[] row) {
-	
-		return getFieldValue("simAppName", row) + " (" + getFieldValue("simAppIdentifier", row) + ")";
-	}
 }

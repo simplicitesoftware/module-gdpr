@@ -67,9 +67,6 @@ public class GdprPia extends ObjectDB {
 				setFieldValue("simPIAdateValidation", Tool.getCurrentDate());
 			}
 			
-		//return Message.formatInfo("INFO_CODE", "Message", "fieldName");
-		//return Message.formatWarning("WARNING_CODE", "Message", "fieldName");
-		//return Message.formatError("ERROR_CODE", "Message", "fieldName");
 		return null;
 	}
 	
@@ -111,19 +108,3 @@ public class GdprPia extends ObjectDB {
 	}
 	
 }
-/*
-
-
-
-
-SimPIA.isNotDraft = function(obj){
-	if("ENAVAL".equals(obj.getFieldValue("simPIAstate")) || "NONVALID".equals(obj.getFieldValue("simPIAstate")) || "SIMPLVALID".equals(obj.getFieldValue("simPIAstate")) || "SIGNVALID".equals(obj.getFieldValue("simPIAstate"))){
-		console.log("isnotdraft");
-		return true
-	} 
-	else{
-		console.log("isdraft");
-		return false;
-	}
-		
-}*/
