@@ -2,7 +2,7 @@
 # / __(_)_ __  _ __| (_)__(_) |_ /_/
 # \__ \ | '  \| '_ \ | / _| |  _/ -_)
 # |___/_|_|_|_| .__/_|_\__|_|\__\___|
-#             |_| Module: SimGdpr 0.7
+#             |_| Module: SimGdpr 0.8
 components:
   schemas:
     ArrayOfGdprActorPac:
@@ -9694,7 +9694,7 @@ info:
     email: contact@simplicitesoftware.com
   description: API for module SimGdpr
   title: SimGdpr
-  version: '0.7'
+  version: '0.8'
 tags:
 - name: GdprActor
   description: Actor

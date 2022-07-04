@@ -4,8 +4,8 @@
  "item": {
   "mdl_name": "SimGdpr",
   "mdl_prefix": "gdpr",
-  "mdl_version": "0.7",
-  "mdl_type": null,
+  "mdl_version": "0.8",
+  "mdl_type": "A",
   "mdl_url": null,
   "mdl_comment": "Simplicite GDPR Module"
  },
@@ -29,7 +29,25 @@
       "grp_parent_id__grp_name": null,
       "grp_home_id__viw_name": null,
       "row_module_id__mdl_name": "SimGdpr"
-     }
+     },
+     "links": [{
+      "object": "Responsability",
+      "label": "Responsibilities",
+      "icon": "img/system/responsability",
+      "field": "rsp_group_id",
+      "list": [{
+       "object": "Responsability",
+       "userkey": "designer~GDPR_ADMIN~2022-05-18",
+       "item": {
+        "rsp_login_id__usr_login": "designer",
+        "rsp_group_id__grp_name": "GDPR_ADMIN",
+        "rsp_start_dt": "2022-05-18",
+        "rsp_end_dt": null,
+        "rsp_activ": true,
+        "row_module_id__mdl_name": "SimGdpr"
+       }
+      }]
+     }]
     },
     {
      "object": "Group",
@@ -1517,7 +1535,7 @@
              "tsl_id__rch_name": "SimActorPacConj-Search",
              "tsl_id__rch_user_id__usr_login": "designer",
              "tsl_id__rch_object_id__obo_name": "GdprActorPac",
-             "tsl_value": "SimActorPacConj-Search",
+             "tsl_value": "Co-Processing Manager",
              "tsl_lang": "ENU",
              "row_module_id__mdl_name": "SimGdpr"
             }
@@ -1563,7 +1581,7 @@
              "tsl_id__rch_name": "SimActorPacConj-Search-ADMIN",
              "tsl_id__rch_user_id__usr_login": "designer",
              "tsl_id__rch_object_id__obo_name": "GdprActorPac",
-             "tsl_value": "SimActorPacConj-Search-ADMIN",
+             "tsl_value": "All co-representatives",
              "tsl_lang": "ENU",
              "row_module_id__mdl_name": "SimGdpr"
             }
@@ -1609,7 +1627,7 @@
              "tsl_id__rch_name": "SimActorPacDPO-Search",
              "tsl_id__rch_user_id__usr_login": "designer",
              "tsl_id__rch_object_id__obo_name": "GdprActorPac",
-             "tsl_value": "SimActorPacDPO-Search",
+             "tsl_value": "DPO of sub-processes",
              "tsl_lang": "ENU",
              "row_module_id__mdl_name": "SimGdpr"
             }
@@ -1655,7 +1673,7 @@
              "tsl_id__rch_name": "SimActorPacDPO-Search-ADMIN",
              "tsl_id__rch_user_id__usr_login": "designer",
              "tsl_id__rch_object_id__obo_name": "GdprActorPac",
-             "tsl_value": "SimActorPacDPO-Search-ADMIN",
+             "tsl_value": "All DPOs",
              "tsl_lang": "ENU",
              "row_module_id__mdl_name": "SimGdpr"
             }
@@ -1701,7 +1719,7 @@
              "tsl_id__rch_name": "SimActorPacRep-Search",
              "tsl_id__rch_user_id__usr_login": "designer",
              "tsl_id__rch_object_id__obo_name": "GdprActorPac",
-             "tsl_value": "SimActorPacRep-Search",
+             "tsl_value": "Sub-process representative",
              "tsl_lang": "ENU",
              "row_module_id__mdl_name": "SimGdpr"
             }
@@ -1747,7 +1765,7 @@
              "tsl_id__rch_name": "SimActorPacRep-Search-ADMIN",
              "tsl_id__rch_user_id__usr_login": "designer",
              "tsl_id__rch_object_id__obo_name": "GdprActorPac",
-             "tsl_value": "SimActorPacRep-Search-ADMIN",
+             "tsl_value": "All representatives",
              "tsl_lang": "ENU",
              "row_module_id__mdl_name": "SimGdpr"
             }
@@ -1793,7 +1811,7 @@
              "tsl_id__rch_name": "SimActorPacResp-Search",
              "tsl_id__rch_user_id__usr_login": "designer",
              "tsl_id__rch_object_id__obo_name": "GdprActorPac",
-             "tsl_value": "SimActorPacResp-Search",
+             "tsl_value": "Sub-process representative",
              "tsl_lang": "ENU",
              "row_module_id__mdl_name": "SimGdpr"
             }
@@ -1839,7 +1857,7 @@
              "tsl_id__rch_name": "SimActorPacResp-Search-ADMIN",
              "tsl_id__rch_user_id__usr_login": "designer",
              "tsl_id__rch_object_id__obo_name": "GdprActorPac",
-             "tsl_value": "SimActorPacResp-Search-ADMIN",
+             "tsl_value": "All representatives",
              "tsl_lang": "ENU",
              "row_module_id__mdl_name": "SimGdpr"
             }
@@ -2645,7 +2663,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprAppNbUsers",
                "tsl_lang": "ENU",
-               "tsl_value": "sim app nb users",
+               "tsl_value": "Number of users",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -7870,7 +7888,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPacPvdUid",
                "tsl_lang": "ENU",
-               "tsl_value": "sim pac pvd UID",
+               "tsl_value": "Identifier",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -8356,7 +8374,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPacPvdAppPacPvdId",
                "tsl_lang": "FRA",
-               "tsl_value": "Sim pac pvd app sim pac pvd id",
+               "tsl_value": "Données personnelles",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -8854,7 +8872,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPacPvdAppAppId",
                "tsl_lang": "FRA",
-               "tsl_value": "Sim pac pvd app sim application GDPR id",
+               "tsl_value": "Application",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -11100,7 +11118,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaId",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaid",
+               "tsl_value": "PIA Identifier",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -11229,7 +11247,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaPrincMesuresEvalEnum",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaprinc mesures eval enum",
+               "tsl_value": "Evaluation",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -11358,7 +11376,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRisquesMesuresEvalEnum",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIarisques mesures eval enum",
+               "tsl_value": "Evaluation",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -11487,7 +11505,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRisquesModifsEvalEnum",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIarisques modifs eval enum",
+               "tsl_value": "Evaluation comment",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -11616,7 +11634,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRisquesDispEvalEnum",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIarisques disp eval enum",
+               "tsl_value": "Evaluation",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -11745,7 +11763,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaPrinMesuresEval",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaprin mesures eval",
+               "tsl_value": "Evaluation comment",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -11874,7 +11892,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRisquesMesuresEval",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIarisques mesures eval",
+               "tsl_value": "Evaluation comment",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -12003,7 +12021,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRisquesModifsEval",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIarisques modifs eval",
+               "tsl_value": "Evaluation comment",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -12134,7 +12152,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRisquesDispEval",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIarisques disp eval",
+               "tsl_value": "Evaluation comment",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -12263,7 +12281,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiAaccesEvalComment",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaacces eval comment",
+               "tsl_value": "Evaluation comment",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -12650,7 +12668,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaEval",
                "tsl_lang": "ENU",
-               "tsl_value": "Evaluation",
+               "tsl_value": "Evaluator",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -13582,7 +13600,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRespTrait",
                "tsl_lang": "ENU",
-               "tsl_value": "sim pia resp trait",
+               "tsl_value": "What are the responsibilities related to the treatment?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -13711,7 +13729,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRefApp",
                "tsl_lang": "ENU",
-               "tsl_value": "sim pia ref app",
+               "tsl_value": "What are the applicable standards?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -13840,7 +13858,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaConEnsembleEval",
                "tsl_lang": "ENU",
-               "tsl_value": "sim pac con ensemble eval",
+               "tsl_value": "Evaluation comment",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -13969,7 +13987,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaCycledonnee",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIacycledonnee",
+               "tsl_value": "How does the data life cycle work (functional description)?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -14098,7 +14116,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaSupportdonnee",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIasupportdonnee",
+               "tsl_value": "What are the data carriers?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -14227,7 +14245,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDonneeEvaluation",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadonnee evaluation",
+               "tsl_value": "Evaluation comment",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -14356,7 +14374,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprFinaldeter",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIafinaldeter",
+               "tsl_value": "Are the purposes of the processing determined, explicit and legitimate?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -14487,7 +14505,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaTraitementlicite",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIatraitementlicite",
+               "tsl_value": "What is/are the basis(s) that make(s) your processing lawful",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -14616,7 +14634,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDonneesadequates",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadonneesadequates",
+               "tsl_value": "Is the data collected adequate for the purpose?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -14746,7 +14764,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDonneeAjour",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadonnee Ajour",
+               "tsl_value": "Is the data accurate and kept up to date?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -14875,7 +14893,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaConservationDonnee",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaconservation donnee",
+               "tsl_value": "How long will the data be kept?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -15004,7 +15022,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaInformee",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIainformee",
+               "tsl_value": "How are the people concerned informed?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -15133,7 +15151,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaConsentObtenu",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaconsent obtenu",
+               "tsl_value": "If applicable, how is consent obtained from data subjects?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -15263,7 +15281,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDroitAcces",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadroit acces",
+               "tsl_value": "Possibility to exercise the right of access and the right to portability?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -15392,7 +15410,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDroitRectification",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadroit rectification",
+               "tsl_value": "Possibility to exercise the right of rectification and deletion?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -15521,7 +15539,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDroitLimitation",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadroit limitation",
+               "tsl_value": "Possibility to exercise the right of limitation and opposition?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -15650,7 +15668,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaObligSousTrait",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaoblig sous trait",
+               "tsl_value": "Are the obligations of subcontractors clearly defined?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -15779,7 +15797,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaTransHorsUeProtegees",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIatrans hors UEprotegees",
+               "tsl_value": "Is the data equally protected when transferred outside the EU?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -15908,7 +15926,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaMesuresDonnee",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIamesures securite",
+               "tsl_value": "Measures on the data",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -16037,7 +16055,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaMesuresSecuSys",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIamesures secu sys",
+               "tsl_value": "General safety measures",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -16166,7 +16184,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaMesuresOrga",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIamesures orga",
+               "tsl_value": "Organizational measures",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -16295,7 +16313,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaAccesImpact",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaimpactpersconcern",
+               "tsl_value": "What might be the impacts on the individuals involved if the risk were to occur?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -16424,7 +16442,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaAccesMenace",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaacces menace",
+               "tsl_value": "What are the threats that could allow the risk to occur?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -16553,7 +16571,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaAccesSources",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaacces sources",
+               "tsl_value": "What sources of risk could they be?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -16682,7 +16700,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaAccesMesures",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaacces mesures",
+               "tsl_value": "What are the measures that help address the risk?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -16811,7 +16829,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaAccesGrav",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaacces grav",
+               "tsl_value": "How do you estimate the severity of the risk?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -16940,7 +16958,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaAccesVrai",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaacces vrai",
+               "tsl_value": "How do you estimate the likelihood of the risk?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -17069,7 +17087,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaModifImpact",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIamodif impact",
+               "tsl_value": "What might be the impacts on the individuals involved if the risk were to occur?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -17198,7 +17216,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaModifsMenace",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIamodifs menace",
+               "tsl_value": "What are the threats that could allow the risk to occur?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -17327,7 +17345,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaModifsSource",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIamodifs source",
+               "tsl_value": "What sources of risk could they be?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -17456,7 +17474,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaModifsMesures",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIamodifs mesures",
+               "tsl_value": "What are the measures that help address the risk?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -17585,7 +17603,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaModifsGravite",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIamodifs gravite",
+               "tsl_value": "How do you estimate the severity of the risk?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -17714,7 +17732,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaModifsVraisemblance",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIamodifs vraisemblance",
+               "tsl_value": "How do you estimate the likelihood of the risk?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -17843,7 +17861,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDispImpact",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadisp impact",
+               "tsl_value": "What might be the impacts on the individuals involved if the risk were to occur?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -17972,7 +17990,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDispMenaces",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadisp menaces",
+               "tsl_value": "What are the threats that could allow the risk to occur?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -18101,7 +18119,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDispSources",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadisp sources",
+               "tsl_value": "What sources of risk could they be?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -18230,7 +18248,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDispMesures",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadisp mesures",
+               "tsl_value": "What are the measures that help address the risk?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -18361,7 +18379,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDispGrav",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadisp grav",
+               "tsl_value": "How do you estimate the severity of the risk?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -18490,7 +18508,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaDispVrai",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIadisp vrai",
+               "tsl_value": "How do you estimate the likelihood of the risk?",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -18619,7 +18637,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRecapImpacts",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIarecap impacts",
+               "tsl_value": "Potential impacts",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -18748,7 +18766,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRecapMenaces",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIarecap menaces",
+               "tsl_value": "Threats",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -18877,7 +18895,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRecapSources",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIarecap sources",
+               "tsl_value": "Sources",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -19008,7 +19026,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaRecapMesures",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIarecap mesures",
+               "tsl_value": "Measures",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -19137,7 +19155,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaAccesEvalEnum",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIaacces eval",
+               "tsl_value": "Evaluation",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -19266,7 +19284,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaConEnsembleEvalEnum",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIAcon ensemble eval enum",
+               "tsl_value": "Evaluation",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -19395,7 +19413,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaConDonneesEvalEnum",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIAcon donnees eval enum",
+               "tsl_value": "Evaluation",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -19524,7 +19542,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaPrincPropEvalEnum",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIAprinc prop eval enum",
+               "tsl_value": "Evaluation",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -19653,7 +19671,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaPrincPropEval",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIAprinc prop eval",
+               "tsl_value": "Evaluation comment",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -19782,7 +19800,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPiaCartoGraph",
                "tsl_lang": "ENU",
-               "tsl_value": "sim PIacarto graph",
+               "tsl_value": "Reminder",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -26709,7 +26727,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPacCompFinal",
                "tsl_lang": "ENU",
-               "tsl_value": "sim pac final complete",
+               "tsl_value": "\"Finality\" Completion",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -26838,7 +26856,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPacCompSecurity",
                "tsl_lang": "ENU",
-               "tsl_value": "sim pac comp security",
+               "tsl_value": "\"Security\" Completion",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -26967,7 +26985,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPacCompData",
                "tsl_lang": "ENU",
-               "tsl_value": "sim pac com data",
+               "tsl_value": "\"Data\" Completion",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -27096,7 +27114,7 @@
                "tsl_typeField": "F",
                "tsl_id__fld_name": "gdprPacCompDest",
                "tsl_lang": "ENU",
-               "tsl_value": "sim pac comp dest",
+               "tsl_value": "\"Recipeints\" Completion",
                "tsl_simplehelp": null,
                "tsl_short_value": null,
                "tsl_placeholder": null,
@@ -27713,7 +27731,7 @@
             "tsl_id__rch_name": "simSearchPAC",
             "tsl_id__rch_user_id__usr_login": "designer",
             "tsl_id__rch_object_id__obo_name": "GdprProcessingActivity",
-            "tsl_value": "simSearchPAC",
+            "tsl_value": "All sub-processes",
             "tsl_lang": "ENU",
             "row_module_id__mdl_name": "SimGdpr"
            }
@@ -32747,7 +32765,7 @@
           "tsl_typeObject": "O",
           "tsl_id__obe_name": "GdprCreatePac",
           "tsl_lang": "ENU",
-          "tsl_value": "simCreatePac",
+          "tsl_value": "Create a sub-process",
           "tsl_help": null,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -33334,7 +33352,7 @@
          "tsl_typeAction": "A",
          "tsl_id__act_name": "SIM-ENAVAL-ENCOURS",
          "tsl_lang": "ENU",
-         "tsl_value": "SIM-ENAVAL-ENCOURS",
+         "tsl_value": "Back to In Progress",
          "tsl_simplehelp": null,
          "row_module_id__mdl_name": "SimGdpr"
         }
@@ -33448,7 +33466,7 @@
          "tsl_typeAction": "A",
          "tsl_id__act_name": "SIMPIASTATE-ENAVAL-NONVALID",
          "tsl_lang": "ENU",
-         "tsl_value": "SIMPIASTATE-ENAVAL-NONVALID",
+         "tsl_value": "Rejected",
          "tsl_simplehelp": null,
          "row_module_id__mdl_name": "SimGdpr"
         }
@@ -33505,7 +33523,7 @@
          "tsl_typeAction": "A",
          "tsl_id__act_name": "SIMPIASTATE-ENAVAL-SIGNVALID",
          "tsl_lang": "ENU",
-         "tsl_value": "SIMPIASTATE-ENAVAL-SIGNVALID",
+         "tsl_value": "Signed validation",
          "tsl_simplehelp": null,
          "row_module_id__mdl_name": "SimGdpr"
         }
@@ -33562,7 +33580,7 @@
          "tsl_typeAction": "A",
          "tsl_id__act_name": "SIMPIASTATE-ENCOURS-ENAVAL",
          "tsl_lang": "ENU",
-         "tsl_value": "SIMPIASTATE-ENCOURS-ENAVAL",
+         "tsl_value": "Request evaluation",
          "tsl_simplehelp": null,
          "row_module_id__mdl_name": "SimGdpr"
         }
@@ -33619,7 +33637,7 @@
          "tsl_typeAction": "A",
          "tsl_id__act_name": "SIMPIASTATE-ENVAL-SIMPLVALID",
          "tsl_lang": "ENU",
-         "tsl_value": "SIMPIASTATE-ENVAL-SIMPLVALID",
+         "tsl_value": "Simple validation",
          "tsl_simplehelp": null,
          "row_module_id__mdl_name": "SimGdpr"
         }
@@ -41883,7 +41901,7 @@
          "tsl_typeField": "F",
          "tsl_id__fld_name": "gdprPersonConcernedName",
          "tsl_lang": "ENU",
-         "tsl_value": "Name of the person",
+         "tsl_value": "Person's name",
          "tsl_simplehelp": null,
          "tsl_short_value": null,
          "tsl_placeholder": null,
@@ -43293,7 +43311,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprEntApp-4",
          "tsl_lang": "ENU",
-         "tsl_value": "SimEntApp-4",
+         "tsl_value": "Entity",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43335,7 +43353,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprEntApp-5",
          "tsl_lang": "ENU",
-         "tsl_value": "SimEntApp-5",
+         "tsl_value": "Application",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43406,7 +43424,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprEntity-3",
          "tsl_lang": "ENU",
-         "tsl_value": "SimEntity-3",
+         "tsl_value": "Details",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43448,7 +43466,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-10",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-RisquesAcces",
+         "tsl_value": "Illegitimate access to data",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43490,7 +43508,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-11",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-RisquesModif",
+         "tsl_value": "Unwanted data modifications",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43532,7 +43550,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-12",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-RisquesDisparition",
+         "tsl_value": "Data disappearance",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43574,7 +43592,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-13",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-RisquesVue",
+         "tsl_value": "Overview of risks",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43616,7 +43634,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-19",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-19",
+         "tsl_value": "Evaluation",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43658,7 +43676,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-20",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-20",
+         "tsl_value": "Evaluation",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43700,7 +43718,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-21",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-21",
+         "tsl_value": "Evaluation",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43784,7 +43802,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-23",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-23",
+         "tsl_value": "Evaluation",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43826,7 +43844,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-25",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-25",
+         "tsl_value": "Evaluation",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43868,7 +43886,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-26",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-26",
+         "tsl_value": "Evaluation",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43952,7 +43970,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-3",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-donnees",
+         "tsl_value": "Data, processes and media",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -43994,7 +44012,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-4",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-3",
+         "tsl_value": "Overview",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44036,7 +44054,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-6",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-PrincipesProp",
+         "tsl_value": "Proportionality and necessity",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44078,7 +44096,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-7",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-PrincipesMesures",
+         "tsl_value": "Measures to protect rights",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44120,7 +44138,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprPiaHistoric-9",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-RisquesMesures",
+         "tsl_value": "Existing or planned measures",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44162,7 +44180,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprProcessingActivity-10",
          "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-10",
+         "tsl_value": "Person in charge of the process",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44204,7 +44222,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprProcessingActivity-11",
          "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-11",
+         "tsl_value": "People involved",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44246,7 +44264,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprProcessingActivity-12",
          "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-12",
+         "tsl_value": "Treatment outside the EU",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44288,7 +44306,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprProcessingActivity-13",
          "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-13",
+         "tsl_value": "Definition",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44372,7 +44390,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprProcessingActivity-15",
          "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-15",
+         "tsl_value": "Completion",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44456,7 +44474,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprProcessingActivity-3",
          "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-3",
+         "tsl_value": "Details",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44498,7 +44516,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprProcessingActivity-4",
          "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-4",
+         "tsl_value": "Actors",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44540,7 +44558,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprProcessingActivity-5",
          "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-5",
+         "tsl_value": "Purpose(s)",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44582,7 +44600,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprProcessingActivity-6",
          "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-6",
+         "tsl_value": "Security",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44624,7 +44642,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprProcessingActivity-7",
          "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-7",
+         "tsl_value": "Data",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -44666,7 +44684,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "GdprProcessingActivity-8",
          "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-8",
+         "tsl_value": "Recipient(s)",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -45131,7 +45149,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimApplication-2",
          "tsl_lang": "ENU",
-         "tsl_value": "SimApplication-2",
+         "tsl_value": "Details",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -45331,7 +45349,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimEntEnt-1",
          "tsl_lang": "ENU",
-         "tsl_value": "SimEntEnt-1",
+         "tsl_value": "Child entity",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -45342,7 +45360,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimEntEnt-1",
          "tsl_lang": "FRA",
-         "tsl_value": "Entité Fille",
+         "tsl_value": "Entité Enfant",
          "row_module_id__mdl_name": "SimGdpr"
         }
        }
@@ -45373,7 +45391,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimEntEnt-2",
          "tsl_lang": "ENU",
-         "tsl_value": "SimEntEnt-2",
+         "tsl_value": "Parent Entity",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -45384,7 +45402,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimEntEnt-2",
          "tsl_lang": "FRA",
-         "tsl_value": "Entité Père",
+         "tsl_value": "Entité Parent",
          "row_module_id__mdl_name": "SimGdpr"
         }
        }
@@ -45427,7 +45445,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimEntity-4",
          "tsl_lang": "ENU",
-         "tsl_value": "SimEntity-4",
+         "tsl_value": "Information",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -45469,7 +45487,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimEntity-5",
          "tsl_lang": "ENU",
-         "tsl_value": "SimEntity-5",
+         "tsl_value": "Organisation",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -45685,7 +45703,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPacApp-4",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPacApp-4",
+         "tsl_value": "Process",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -45727,7 +45745,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPacApp-5",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPacApp-5",
+         "tsl_value": "Application",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -45811,7 +45829,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPacPvd-5",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPacPvd-5",
+         "tsl_value": "Process",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -45853,7 +45871,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPacPvd-6",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPacPvd-6",
+         "tsl_value": "Details",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -45895,7 +45913,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPacPvd-7",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPacPvd-7",
+         "tsl_value": "Data",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -45937,7 +45955,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPacPvdApp-1",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPacPvdApp-1",
+         "tsl_value": "Processed data",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46021,7 +46039,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPacPvdApp-3",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPacPvdApp-3",
+         "tsl_value": "Application",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46063,7 +46081,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPacPvdApp-4",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPacPvdApp-4",
+         "tsl_value": "Details",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46218,7 +46236,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPacPvdEnt-4",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPacPvdEnt-4",
+         "tsl_value": "Processed data",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46260,7 +46278,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPacPvdEnt-5",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPacPvdEnt-5",
+         "tsl_value": "Entity",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46302,7 +46320,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPacPvdEnt-6",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPacPvdEnt-6",
+         "tsl_value": "Details",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46554,7 +46572,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPIA-contexte",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-2",
+         "tsl_value": "Context",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46596,7 +46614,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPIA-description",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-1",
+         "tsl_value": "Description",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46638,7 +46656,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPIA-evalGlobale",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-29",
+         "tsl_value": "Overall assessment",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46680,7 +46698,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPIA-Principes",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-Principes",
+         "tsl_value": "Basic principles",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46722,7 +46740,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPIA-Risques",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-Risques",
+         "tsl_value": "Risks",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46764,7 +46782,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPIA-Validation",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-Validation",
+         "tsl_value": "Validation",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46806,7 +46824,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPIA-ValidationAvis",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-ValidationAvis",
+         "tsl_value": "Notice to the DPO and data subjects",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46848,7 +46866,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPIA-ValidationCarto",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-ValidationCarto",
+         "tsl_value": "Risk mapping",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46890,7 +46908,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPIA-ValidationPlan",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIA-ValidationPlan",
+         "tsl_value": "Action plan",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
@@ -46974,7 +46992,7 @@
          "tsl_typeFieldArea": "Z",
          "tsl_id__ofa_name": "SimPIAHistoric-1",
          "tsl_lang": "ENU",
-         "tsl_value": "SimPIAHistoric-1",
+         "tsl_value": "PIA",
          "row_module_id__mdl_name": "SimGdpr"
         }
        },
