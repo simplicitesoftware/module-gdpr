@@ -166,252 +166,6 @@ paths:
       - GdprEntEnt
       consumes:
       - application/json
-  /rest/GdprProcessingActivity/{row_id}:
-    post:
-      summary: Create a new GdprProcessingActivitybusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprocessingactivity-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprProcessingActivity'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprProcessingActivity'
-        in: body
-        name: body
-      tags:
-      - GdprProcessingActivity
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprProcessingActivity business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprocessingactivity-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprProcessingActivity'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprProcessingActivity
-    delete:
-      summary: Delete a GdprProcessingActivity business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprocessingactivity-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprProcessingActivity
-    put:
-      summary: Update a GdprProcessingActivitybusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprocessingactivity-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprProcessingActivity'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprProcessingActivity'
-        in: body
-        name: body
-      tags:
-      - GdprProcessingActivity
-      consumes:
-      - application/json
-  /login:
-    get:
-      summary: Login (obtain bearer token)
-      security:
-      - basicAuth: []
-      produces:
-      - text/plain
-      - application/json
-      operationId: login
-      responses:
-        '200':
-          description: Successful login
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-      parameters:
-      - in: query
-        name: _output
-        description: Optional output format
-        type: string
-        required: false
-        enum:
-        - json
-        - oauth2
-        - token
-      tags:
-      - session
-  /rest/GdprPersonConcerned:
-    get:
-      summary: Search GdprPersonConcerned business object records or get contextualized
-        metadata
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpersonconcerned-search
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/ArrayOfGdprPersonConcerned'
-          description: Success in searching business object records (or in getting
-            contextualized business object metadata, documentation, ...)
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: query
-        name: _metadata
-        description: Metadata?
-        type: boolean
-        required: false
-      - in: query
-        name: _count
-        description: Count?
-        type: boolean
-        required: false
-      - in: query
-        name: _doc
-        description: Documentation?
-        type: boolean
-        required: false
-      - in: query
-        name: gdprPersonConcernedCategory
-        description: Search filter for Category of the person concerned
-        type: string
-        required: false
-        enum:
-        - EMP
-        - CLI
-        - PAT
-        - PRO
-      - in: query
-        name: gdprPersonConcernedDesc
-        description: Search filter for Description of the category of people concerned
-        type: string
-        required: false
-      tags:
-      - GdprPersonConcerned
   /rest/GdprPvdPvd/{row_id}:
     post:
       summary: Create a new GdprPvdPvdbusiness object record
@@ -734,552 +488,6 @@ paths:
         name: body
       tags:
       - GdprActor
-      consumes:
-      - application/json
-  /rest/GdprEntity/{row_id}:
-    post:
-      summary: Create a new GdprEntitybusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprentity-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprEntity'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprEntity'
-        in: body
-        name: body
-      tags:
-      - GdprEntity
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprEntity business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprentity-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprEntity'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprEntity
-    delete:
-      summary: Delete a GdprEntity business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprentity-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprEntity
-    put:
-      summary: Update a GdprEntitybusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprentity-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprEntity'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprEntity'
-        in: body
-        name: body
-      tags:
-      - GdprEntity
-      consumes:
-      - application/json
-  /rest/GdprProcess:
-    get:
-      summary: Search GdprProcess business object records or get contextualized metadata
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprocess-search
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/ArrayOfGdprProcess'
-          description: Success in searching business object records (or in getting
-            contextualized business object metadata, documentation, ...)
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: query
-        name: _metadata
-        description: Metadata?
-        type: boolean
-        required: false
-      - in: query
-        name: _count
-        description: Count?
-        type: boolean
-        required: false
-      - in: query
-        name: _doc
-        description: Documentation?
-        type: boolean
-        required: false
-      - in: query
-        name: _indexsearch
-        description: Index search query
-        type: string
-        required: false
-      - in: query
-        name: gdprPcsId
-        description: Search filter for Process ID
-        type: string
-        required: false
-      - in: query
-        name: gdprPcsName
-        description: Search filter for Process name
-        type: string
-        required: false
-      - in: query
-        name: gdprGenDescription
-        description: Search filter for Description
-        type: string
-        required: false
-      tags:
-      - GdprProcess
-  /rest/GdprPersonConcerned/{row_id}:
-    post:
-      summary: Create a new GdprPersonConcernedbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpersonconcerned-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPersonConcerned'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprPersonConcerned'
-        in: body
-        name: body
-      tags:
-      - GdprPersonConcerned
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprPersonConcerned business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpersonconcerned-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPersonConcerned'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprPersonConcerned
-    delete:
-      summary: Delete a GdprPersonConcerned business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpersonconcerned-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprPersonConcerned
-    put:
-      summary: Update a GdprPersonConcernedbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpersonconcerned-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPersonConcerned'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprPersonConcerned'
-        in: body
-        name: body
-      tags:
-      - GdprPersonConcerned
-      consumes:
-      - application/json
-  /rest/GdprTouPac/{row_id}:
-    post:
-      summary: Create a new GdprTouPacbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprtoupac-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprTouPac'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprTouPac'
-        in: body
-        name: body
-      tags:
-      - GdprTouPac
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprTouPac business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprtoupac-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprTouPac'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprTouPac
-    delete:
-      summary: Delete a GdprTouPac business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprtoupac-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprTouPac
-    put:
-      summary: Update a GdprTouPacbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprtoupac-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprTouPac'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprTouPac'
-        in: body
-        name: body
-      tags:
-      - GdprTouPac
       consumes:
       - application/json
   /rest/GdprPiaHistoric:
@@ -1919,213 +1127,6 @@ paths:
         - CONJ
       tags:
       - GdprActorPac
-  /rest/GdprPacPvdEnt:
-    get:
-      summary: Search GdprPacPvdEnt business object records or get contextualized
-        metadata
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpacpvdent-search
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/ArrayOfGdprPacPvdEnt'
-          description: Success in searching business object records (or in getting
-            contextualized business object metadata, documentation, ...)
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: query
-        name: _metadata
-        description: Metadata?
-        type: boolean
-        required: false
-      - in: query
-        name: _count
-        description: Count?
-        type: boolean
-        required: false
-      - in: query
-        name: _doc
-        description: Documentation?
-        type: boolean
-        required: false
-      - in: query
-        name: _indexsearch
-        description: Index search query
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdEntPacPvdId
-        description: Search filter for Private Data
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdEntPacPvdId__gdprPacPvdUid
-        description: Search filter for Personal Data sim pac pvd UID
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdEntPacPvdId__gdprPacPvdPacId
-        description: Search filter for Sub-Process
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdEntPacPvdId__gdprPacPvdPacId__gdprPacName
-        description: Search filter for Sub-process name
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdEntPacPvdId__gdprPacPvdPacId__gdprPacPcsId
-        description: Search filter for Process
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdEntPacPvdId__gdprPacPvdPacId__gdprPacPcsId__gdprPcsName
-        description: Search filter for Process name
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdEntPacPvdId__gdprPacPvdPvdId
-        description: Search filter for Private Data
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdEntPacPvdId__gdprPacPvdPvdId__gdprPvdName
-        description: Search filter for Private data name
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdEntPacPvdId__gdprPacPvdPvdId__gdprPvdCat
-        description: Search filter for Personal Data Personal Data Data classification
-        type: string
-        required: false
-        enum:
-        - ID
-        - PERS
-        - ECO
-        - LOGIN
-        - LOCAL
-      - in: query
-        name: gdprPacPvdEntEntId
-        description: Search filter for Entity
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdEntEntId__gdprEntName
-        description: Search filter for Entity Business Unit Name
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdEntType
-        description: Search filter for Type
-        type: string
-        required: false
-        enum:
-        - PROVIDING
-        - CONSUMING
-        - PROCESSING
-      - in: query
-        name: gdprPacPvdEntChannel
-        description: Search filter for Channel
-        type: string
-        required: false
-        enum:
-        - UI
-        - MANUAL
-        - WS
-        - FTP
-        - OTHER
-      tags:
-      - GdprPacPvdEnt
-  /rest/GdprEntEnt:
-    get:
-      summary: Search GdprEntEnt business object records or get contextualized metadata
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprentent-search
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/ArrayOfGdprEntEnt'
-          description: Success in searching business object records (or in getting
-            contextualized business object metadata, documentation, ...)
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: query
-        name: _metadata
-        description: Metadata?
-        type: boolean
-        required: false
-      - in: query
-        name: _count
-        description: Count?
-        type: boolean
-        required: false
-      - in: query
-        name: _doc
-        description: Documentation?
-        type: boolean
-        required: false
-      - in: query
-        name: gdprEntEntElementId
-        description: Search filter for Sim ent ent sim entity id
-        type: string
-        required: false
-      - in: query
-        name: gdprEntEntElementId__gdprEntName
-        description: Search filter for Sim ent ent sim entity id Business Unit Name
-        type: string
-        required: false
-      - in: query
-        name: gdprEntEntElementId__gdprEntLegalName
-        description: Search filter for Sim ent ent sim entity id Legal Name
-        type: string
-        required: false
-      - in: query
-        name: gdprEntEntElementId__gdprEntDescription
-        description: Search filter for Sim ent ent sim entity id Description
-        type: string
-        required: false
-      - in: query
-        name: gdprEntEntEnclosingId
-        description: Search filter for Sim ent ent enclosing id
-        type: string
-        required: false
-      - in: query
-        name: gdprEntEntEnclosingId__gdprEntName
-        description: Search filter for Sim ent ent enclosing id Business Unit Name
-        type: string
-        required: false
-      - in: query
-        name: gdprEntEntEnclosingId__gdprEntLegalName
-        description: Search filter for Sim ent ent enclosing id Legal Name
-        type: string
-        required: false
-      - in: query
-        name: gdprEntEntEnclosingId__gdprEntDescription
-        description: Search filter for Sim ent ent enclosing id Description
-        type: string
-        required: false
-      tags:
-      - GdprEntEnt
   /rest/GdprPacPvdApp:
     get:
       summary: Search GdprPacPvdApp business object records or get contextualized
@@ -2245,168 +1246,6 @@ paths:
         - OTHER
       tags:
       - GdprPacPvdApp
-  /rest/GdprProcessingActivityHistoric/{row_id}:
-    post:
-      summary: Create a new GdprProcessingActivityHistoricbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprocessingactivityhistoric-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprProcessingActivityHistoric'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprProcessingActivityHistoric'
-        in: body
-        name: body
-      tags:
-      - GdprProcessingActivityHistoric
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprProcessingActivityHistoric business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprocessingactivityhistoric-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprProcessingActivityHistoric'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprProcessingActivityHistoric
-    delete:
-      summary: Delete a GdprProcessingActivityHistoric business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprocessingactivityhistoric-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprProcessingActivityHistoric
-    put:
-      summary: Update a GdprProcessingActivityHistoricbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprocessingactivityhistoric-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprProcessingActivityHistoric'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprProcessingActivityHistoric'
-        in: body
-        name: body
-      tags:
-      - GdprProcessingActivityHistoric
-      consumes:
-      - application/json
   /rest/GdprActor/{row_id}/publication:User-DEFAULT:
     get:
       summary: Call a custom publication for a GdprActor business object record or
@@ -2441,152 +1280,6 @@ paths:
         required: true
       tags:
       - GdprActor
-  /rest/GdprPacPvd:
-    get:
-      summary: Search GdprPacPvd business object records or get contextualized metadata
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpacpvd-search
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/ArrayOfGdprPacPvd'
-          description: Success in searching business object records (or in getting
-            contextualized business object metadata, documentation, ...)
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: query
-        name: _metadata
-        description: Metadata?
-        type: boolean
-        required: false
-      - in: query
-        name: _count
-        description: Count?
-        type: boolean
-        required: false
-      - in: query
-        name: _doc
-        description: Documentation?
-        type: boolean
-        required: false
-      - in: query
-        name: _indexsearch
-        description: Index search query
-        type: string
-        required: false
-      - in: query
-        name: gdprPiaPacPvdId
-        description: Search filter for Sim PIA sim pac pvd id
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdPacId
-        description: Search filter for Sub-Process
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdPacId__gdprPacPcsId
-        description: Search filter for Process
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdPacId__gdprPacPcsId__gdprPcsName
-        description: Search filter for Process name
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdPacId__gdprPacName
-        description: Search filter for Sub-process name
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdPacId__gdprPacId
-        description: Search filter for Sub-Process Processing Activity ID
-        type: integer
-        required: false
-      - in: query
-        name: gdprPacPvdPvdId
-        description: Search filter for Private Data
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdPvdId__gdprPvdName
-        description: Search filter for Private data name
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdPvdId__gdprPvdId
-        description: Search filter for Personal Data ID
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdPvdId__gdprPvdCat
-        description: Search filter for Personal Data Data classification
-        type: string
-        required: false
-        enum:
-        - ID
-        - PERS
-        - ECO
-        - LOGIN
-        - LOCAL
-      - in: query
-        name: gdprPacPvdVolume
-        description: Search filter for Volume
-        type: integer
-        required: false
-      - in: query
-        name: gdprPacPvdConsent
-        description: Search filter for Consent?
-        type: boolean
-        required: false
-      - in: query
-        name: gdprPacPvdPerformanceOfaContact
-        description: Search filter for Performance of a contact
-        type: boolean
-        required: false
-      - in: query
-        name: gdprPacPvdComplianceWithAlegalObligation
-        description: Search filter for Compliance with a legal obligation
-        type: boolean
-        required: false
-      - in: query
-        name: gdprImPacPvdProtectVitalInterests
-        description: Search filter for Protect vital interests of an individual
-        type: boolean
-        required: false
-      - in: query
-        name: gdprPacPvdPublicInterest
-        description: Search filter for Public interest
-        type: boolean
-        required: false
-      - in: query
-        name: gdprPacPvdLegitimateInterest
-        description: Search filter for Legitimate interest
-        type: boolean
-        required: false
-      - in: query
-        name: gdprPacPvdDelai
-        description: Search filter for Deletion time
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPvdUid
-        description: Search filter for sim pac pvd UID
-        type: string
-        required: false
-      tags:
-      - GdprPacPvd
   /rest/GdprRecepient/{row_id}:
     post:
       summary: Create a new GdprRecepientbusiness object record
@@ -2749,194 +1442,6 @@ paths:
       - GdprRecepient
       consumes:
       - application/json
-  /rest/GdprProcessingActivityHistoric:
-    get:
-      summary: Search GdprProcessingActivityHistoric business object records or get
-        contextualized metadata
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprocessingactivityhistoric-search
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/ArrayOfGdprProcessingActivityHistoric'
-          description: Success in searching business object records (or in getting
-            contextualized business object metadata, documentation, ...)
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: query
-        name: _metadata
-        description: Metadata?
-        type: boolean
-        required: false
-      - in: query
-        name: _count
-        description: Count?
-        type: boolean
-        required: false
-      - in: query
-        name: _doc
-        description: Documentation?
-        type: boolean
-        required: false
-      - in: query
-        name: row_ref_id
-        description: Search filter for Record row ID
-        type: string
-        required: false
-      - in: query
-        name: row_idx
-        description: Search filter for History record index
-        type: integer
-        required: false
-      - in: query
-        name: created_by_hist
-        description: Search filter for Created by
-        type: string
-        required: false
-      - in: query
-        name: created_dt_hist
-        description: Search filter for Created date
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPcsId
-        description: Search filter for Process
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPcsId__gdprPcsName
-        description: Search filter for Process name
-        type: string
-        required: false
-      - in: query
-        name: gdprPacPcsId__gdprPcsId
-        description: Search filter for Process Process ID
-        type: string
-        required: false
-      - in: query
-        name: gdprPacName
-        description: Search filter for Sub-process name
-        type: string
-        required: false
-      - in: query
-        name: gdprPacRef
-        description: Search filter for Reference
-        type: string
-        required: false
-      - in: query
-        name: gdprPacDateCrea
-        description: Search filter for Date de créatioe du traitement
-        type: string
-        required: false
-      - in: query
-        name: gdprPacDateMaj
-        description: Search filter for Date de mise à jour du traitement
-        type: string
-        required: false
-      - in: query
-        name: gdprPacFinalitePrincipale
-        description: Search filter for Finalité principale
-        type: string
-        required: false
-      - in: query
-        name: gdprPacFinaliteSous
-        description: Search filter for Sous-finalité du traitement
-        type: string
-        required: false
-      - in: query
-        name: gdprPacUe
-        description: Search filter for Hors UE Oui/Non
-        type: boolean
-        required: false
-      - in: query
-        name: gdprPacMesuresSecuTech
-        description: Search filter for Mesures de sécurité techniques
-        type: string
-        required: false
-      - in: query
-        name: gdprPacMesuresSecuOrga
-        description: Search filter for Mesures de sécurité organisationnelles
-        type: string
-        required: false
-      - in: query
-        name: gdprPacActorActorId
-        description: Search filter for Actor
-        type: string
-        required: false
-      - in: query
-        name: gdprPacActorActorId__usr_login
-        description: Search filter for Login
-        type: string
-        required: false
-      - in: query
-        name: gdprPacActorActorId__usr_last_name
-        description: Search filter for Last name
-        type: string
-        required: false
-      - in: query
-        name: gdprPacActorActorId__usr_first_name
-        description: Search filter for First name
-        type: string
-        required: false
-      - in: query
-        name: gdprPacCatPeople
-        description: Search filter for Type of people concerned
-        type: string
-        required: false
-        enum:
-        - SAL
-        - CLI
-        - PAT
-        - PRO
-        - OTR
-      - in: query
-        name: gdprPacPersConOther
-        description: Search filter for Other
-        type: string
-        required: false
-      - in: query
-        name: gdprPacCompGlobal
-        description: Search filter for Progress
-        type: integer
-        required: false
-      - in: query
-        name: gdprPacCompActor
-        description: Search filter for Flag that indicates if completion for the "Actor"
-          section is complete
-        type: boolean
-        required: false
-      - in: query
-        name: gdprPacCompFinal
-        description: Search filter for sim pac final complete
-        type: boolean
-        required: false
-      - in: query
-        name: gdprPacCompSecurity
-        description: Search filter for sim pac comp security
-        type: boolean
-        required: false
-      - in: query
-        name: gdprPacCompData
-        description: Search filter for sim pac com data
-        type: boolean
-        required: false
-      - in: query
-        name: gdprPacCompDest
-        description: Search filter for sim pac comp dest
-        type: boolean
-        required: false
-      tags:
-      - GdprProcessingActivityHistoric
   /rest/GdprRecepPac/{row_id}:
     post:
       summary: Create a new GdprRecepPacbusiness object record
@@ -3099,168 +1604,6 @@ paths:
       - GdprRecepPac
       consumes:
       - application/json
-  /rest/GdprTransferOutUe/{row_id}:
-    post:
-      summary: Create a new GdprTransferOutUebusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprtransferoutue-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprTransferOutUe'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprTransferOutUe'
-        in: body
-        name: body
-      tags:
-      - GdprTransferOutUe
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprTransferOutUe business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprtransferoutue-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprTransferOutUe'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprTransferOutUe
-    delete:
-      summary: Delete a GdprTransferOutUe business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprtransferoutue-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprTransferOutUe
-    put:
-      summary: Update a GdprTransferOutUebusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprtransferoutue-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprTransferOutUe'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprTransferOutUe'
-        in: body
-        name: body
-      tags:
-      - GdprTransferOutUe
-      consumes:
-      - application/json
   /rest/GdprEntApp:
     get:
       summary: Search GdprEntApp business object records or get contextualized metadata
@@ -3326,243 +1669,6 @@ paths:
         required: false
       tags:
       - GdprEntApp
-  /rest/GdprPrivateData/{row_id}:
-    post:
-      summary: Create a new GdprPrivateDatabusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprivatedata-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPrivateData'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprPrivateData'
-        in: body
-        name: body
-      tags:
-      - GdprPrivateData
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprPrivateData business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprivatedata-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPrivateData'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprPrivateData
-    delete:
-      summary: Delete a GdprPrivateData business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprivatedata-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprPrivateData
-    put:
-      summary: Update a GdprPrivateDatabusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprprivatedata-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPrivateData'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprPrivateData'
-        in: body
-        name: body
-      tags:
-      - GdprPrivateData
-      consumes:
-      - application/json
-  /rest/GdprPvdPvd:
-    get:
-      summary: Search GdprPvdPvd business object records or get contextualized metadata
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpvdpvd-search
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/ArrayOfGdprPvdPvd'
-          description: Success in searching business object records (or in getting
-            contextualized business object metadata, documentation, ...)
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: query
-        name: _metadata
-        description: Metadata?
-        type: boolean
-        required: false
-      - in: query
-        name: _count
-        description: Count?
-        type: boolean
-        required: false
-      - in: query
-        name: _doc
-        description: Documentation?
-        type: boolean
-        required: false
-      - in: query
-        name: _indexsearch
-        description: Index search query
-        type: string
-        required: false
-      - in: query
-        name: gdprPvdPvdEnclosingId
-        description: Search filter for Enclosing private data
-        type: string
-        required: false
-      - in: query
-        name: gdprPvdPvdEnclosingId__gdprPvdName
-        description: Search filter for Private data name
-        type: string
-        required: false
-      - in: query
-        name: gdprPvdPvdEnclosingId__gdprPvdId
-        description: Search filter for Enclosing Data ID
-        type: string
-        required: false
-      - in: query
-        name: gdprPvdPvdElementId
-        description: Search filter for Element private data
-        type: string
-        required: false
-      - in: query
-        name: gdprPvdPvdElementId__gdprPvdName
-        description: Search filter for Private data name
-        type: string
-        required: false
-      - in: query
-        name: gdprPvdPvdElementId__gdprPvdId
-        description: Search filter for Element Data ID
-        type: string
-        required: false
-      tags:
-      - GdprPvdPvd
   /rest/GdprTouPac:
     get:
       summary: Search GdprTouPac business object records or get contextualized metadata
@@ -3628,168 +1734,6 @@ paths:
         required: false
       tags:
       - GdprTouPac
-  /rest/GdprActorPac/{row_id}:
-    post:
-      summary: Create a new GdprActorPacbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdpractorpac-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprActorPac'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprActorPac'
-        in: body
-        name: body
-      tags:
-      - GdprActorPac
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprActorPac business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdpractorpac-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprActorPac'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprActorPac
-    delete:
-      summary: Delete a GdprActorPac business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdpractorpac-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprActorPac
-    put:
-      summary: Update a GdprActorPacbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdpractorpac-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprActorPac'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprActorPac'
-        in: body
-        name: body
-      tags:
-      - GdprActorPac
-      consumes:
-      - application/json
   /rest/GdprApplication:
     get:
       summary: Search GdprApplication business object records or get contextualized
@@ -4404,330 +2348,6 @@ paths:
         required: false
       tags:
       - GdprPia
-  /rest/GdprPia/{row_id}:
-    post:
-      summary: Create a new GdprPiabusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpia-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPia'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprPia'
-        in: body
-        name: body
-      tags:
-      - GdprPia
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprPia business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpia-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPia'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprPia
-    delete:
-      summary: Delete a GdprPia business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpia-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprPia
-    put:
-      summary: Update a GdprPiabusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpia-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPia'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprPia'
-        in: body
-        name: body
-      tags:
-      - GdprPia
-      consumes:
-      - application/json
-  /rest/GdprApplication/{row_id}:
-    post:
-      summary: Create a new GdprApplicationbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprapplication-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprApplication'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprApplication'
-        in: body
-        name: body
-      tags:
-      - GdprApplication
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprApplication business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprapplication-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprApplication'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprApplication
-    delete:
-      summary: Delete a GdprApplication business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprapplication-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprApplication
-    put:
-      summary: Update a GdprApplicationbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprapplication-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprApplication'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprApplication'
-        in: body
-        name: body
-      tags:
-      - GdprApplication
-      consumes:
-      - application/json
   /rest/GdprPiaHistoric/{row_id}:
     post:
       summary: Create a new GdprPiaHistoricbusiness object record
@@ -5068,168 +2688,6 @@ paths:
         required: false
       tags:
       - GdprProcessingActivity
-  /rest/GdprPacPvdApp/{row_id}:
-    post:
-      summary: Create a new GdprPacPvdAppbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpacpvdapp-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPacPvdApp'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprPacPvdApp'
-        in: body
-        name: body
-      tags:
-      - GdprPacPvdApp
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprPacPvdApp business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpacpvdapp-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPacPvdApp'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprPacPvdApp
-    delete:
-      summary: Delete a GdprPacPvdApp business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpacpvdapp-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprPacPvdApp
-    put:
-      summary: Update a GdprPacPvdAppbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpacpvdapp-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPacPvdApp'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprPacPvdApp'
-        in: body
-        name: body
-      tags:
-      - GdprPacPvdApp
-      consumes:
-      - application/json
   /:
     get:
       summary: Get user session information
@@ -5253,168 +2711,6 @@ paths:
         required: false
       tags:
       - session
-  /rest/GdprPacPvdEnt/{row_id}:
-    post:
-      summary: Create a new GdprPacPvdEntbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpacpvdent-create
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPacPvdEnt'
-          description: Success in creating a new business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprPacPvdEnt'
-        in: body
-        name: body
-      tags:
-      - GdprPacPvdEnt
-      consumes:
-      - application/json
-    get:
-      summary: Get a GdprPacPvdEnt business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpacpvdent-get
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPacPvdEnt'
-          description: Success in getting a single business object record
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - in: query
-        name: _inline_documents
-        description: Inline documents?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_thumbnails
-        description: Inline documents' thumbnails?
-        type: boolean
-        required: false
-      - in: query
-        name: _inline_objects
-        description: Inline objects?
-        type: boolean
-        required: false
-      tags:
-      - GdprPacPvdEnt
-    delete:
-      summary: Delete a GdprPacPvdEnt business object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpacpvdent-delete
-      responses:
-        '200':
-          description: Success in deleting a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      tags:
-      - GdprPacPvdEnt
-    put:
-      summary: Update a GdprPacPvdEntbusiness object record
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprpacpvdent-update
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/GdprPacPvdEnt'
-          description: Success in updating a business object record
-        '400':
-          schema:
-            $ref: '#/definitions/Error400'
-          description: Bad request
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
-      - schema:
-          $ref: '#/definitions/GdprPacPvdEnt'
-        in: body
-        name: body
-      tags:
-      - GdprPacPvdEnt
-      consumes:
-      - application/json
   /rest/GdprEntApp/{row_id}:
     post:
       summary: Create a new GdprEntAppbusiness object record
@@ -5815,71 +3111,6 @@ paths:
         - OTHER
       tags:
       - GdprRecepPac
-  /rest/GdprEntity:
-    get:
-      summary: Search GdprEntity business object records or get contextualized metadata
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdprentity-search
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/ArrayOfGdprEntity'
-          description: Success in searching business object records (or in getting
-            contextualized business object metadata, documentation, ...)
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-      parameters:
-      - in: query
-        name: _metadata
-        description: Metadata?
-        type: boolean
-        required: false
-      - in: query
-        name: _count
-        description: Count?
-        type: boolean
-        required: false
-      - in: query
-        name: _doc
-        description: Documentation?
-        type: boolean
-        required: false
-      - in: query
-        name: gdprEntName
-        description: Search filter for Business Unit Name
-        type: string
-        required: false
-      - in: query
-        name: gdprEntityProcessingActivityFk
-        description: Search filter for Sim entity sim processing activity id
-        type: string
-        required: false
-      - in: query
-        name: gdprEntLegalName
-        description: Search filter for Legal Name
-        type: string
-        required: false
-      - in: query
-        name: gdprEntLogo
-        description: Search filter for Entity's logo
-        type: string
-        required: false
-      - in: query
-        name: gdprEntDescription
-        description: Search filter for Description
-        type: string
-        required: false
-      tags:
-      - GdprEntity
   /rest/GdprPacPvd/{row_id}:
     post:
       summary: Create a new GdprPacPvdbusiness object record
@@ -6042,6 +3273,2843 @@ paths:
       - GdprPacPvd
       consumes:
       - application/json
+  /rest/GdprActor/{row_id}/publication:User-EXCEL:
+    get:
+      summary: Call a custom publication for a GdprActor business object record or
+        for all records
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdpractor-publication-user-excel
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/PublicationResult'
+          description: Success in calling the custom publication
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprActor
+  /rest/GdprProcessingActivity/{row_id}:
+    post:
+      summary: Create a new GdprProcessingActivitybusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprocessingactivity-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprProcessingActivity'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprProcessingActivity'
+        in: body
+        name: body
+      tags:
+      - GdprProcessingActivity
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprProcessingActivity business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprocessingactivity-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprProcessingActivity'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprProcessingActivity
+    delete:
+      summary: Delete a GdprProcessingActivity business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprocessingactivity-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprProcessingActivity
+    put:
+      summary: Update a GdprProcessingActivitybusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprocessingactivity-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprProcessingActivity'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprProcessingActivity'
+        in: body
+        name: body
+      tags:
+      - GdprProcessingActivity
+      consumes:
+      - application/json
+  /login:
+    get:
+      summary: Login (obtain bearer token)
+      security:
+      - basicAuth: []
+      produces:
+      - text/plain
+      - application/json
+      operationId: login
+      responses:
+        '200':
+          description: Successful login
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+      parameters:
+      - in: query
+        name: _output
+        description: Optional output format
+        type: string
+        required: false
+        enum:
+        - json
+        - oauth2
+        - token
+      tags:
+      - session
+  /rest/GdprActor/{row_id}/publication:User-VCARD:
+    get:
+      summary: Call a custom publication for a GdprActor business object record or
+        for all records
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdpractor-publication-user-vcard
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/PublicationResult'
+          description: Success in calling the custom publication
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprActor
+  /rest/GdprPersonConcerned:
+    get:
+      summary: Search GdprPersonConcerned business object records or get contextualized
+        metadata
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpersonconcerned-search
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/ArrayOfGdprPersonConcerned'
+          description: Success in searching business object records (or in getting
+            contextualized business object metadata, documentation, ...)
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: query
+        name: _metadata
+        description: Metadata?
+        type: boolean
+        required: false
+      - in: query
+        name: _count
+        description: Count?
+        type: boolean
+        required: false
+      - in: query
+        name: _doc
+        description: Documentation?
+        type: boolean
+        required: false
+      - in: query
+        name: gdprPersonConcernedCategory
+        description: Search filter for Category of the person concerned
+        type: string
+        required: false
+        enum:
+        - EMP
+        - CLI
+        - PAT
+        - PRO
+      - in: query
+        name: gdprPersonConcernedDesc
+        description: Search filter for Description of the category of people concerned
+        type: string
+        required: false
+      tags:
+      - GdprPersonConcerned
+  /rest/GdprEntity/{row_id}:
+    post:
+      summary: Create a new GdprEntitybusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprentity-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprEntity'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprEntity'
+        in: body
+        name: body
+      tags:
+      - GdprEntity
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprEntity business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprentity-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprEntity'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprEntity
+    delete:
+      summary: Delete a GdprEntity business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprentity-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprEntity
+    put:
+      summary: Update a GdprEntitybusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprentity-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprEntity'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprEntity'
+        in: body
+        name: body
+      tags:
+      - GdprEntity
+      consumes:
+      - application/json
+  /rest/GdprProcess:
+    get:
+      summary: Search GdprProcess business object records or get contextualized metadata
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprocess-search
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/ArrayOfGdprProcess'
+          description: Success in searching business object records (or in getting
+            contextualized business object metadata, documentation, ...)
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: query
+        name: _metadata
+        description: Metadata?
+        type: boolean
+        required: false
+      - in: query
+        name: _count
+        description: Count?
+        type: boolean
+        required: false
+      - in: query
+        name: _doc
+        description: Documentation?
+        type: boolean
+        required: false
+      - in: query
+        name: _indexsearch
+        description: Index search query
+        type: string
+        required: false
+      - in: query
+        name: gdprPcsId
+        description: Search filter for Process ID
+        type: string
+        required: false
+      - in: query
+        name: gdprPcsName
+        description: Search filter for Process name
+        type: string
+        required: false
+      - in: query
+        name: gdprGenDescription
+        description: Search filter for Description
+        type: string
+        required: false
+      tags:
+      - GdprProcess
+  /rest/GdprPersonConcerned/{row_id}:
+    post:
+      summary: Create a new GdprPersonConcernedbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpersonconcerned-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPersonConcerned'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprPersonConcerned'
+        in: body
+        name: body
+      tags:
+      - GdprPersonConcerned
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprPersonConcerned business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpersonconcerned-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPersonConcerned'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprPersonConcerned
+    delete:
+      summary: Delete a GdprPersonConcerned business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpersonconcerned-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprPersonConcerned
+    put:
+      summary: Update a GdprPersonConcernedbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpersonconcerned-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPersonConcerned'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprPersonConcerned'
+        in: body
+        name: body
+      tags:
+      - GdprPersonConcerned
+      consumes:
+      - application/json
+  /rest/GdprTouPac/{row_id}:
+    post:
+      summary: Create a new GdprTouPacbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprtoupac-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprTouPac'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprTouPac'
+        in: body
+        name: body
+      tags:
+      - GdprTouPac
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprTouPac business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprtoupac-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprTouPac'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprTouPac
+    delete:
+      summary: Delete a GdprTouPac business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprtoupac-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprTouPac
+    put:
+      summary: Update a GdprTouPacbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprtoupac-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprTouPac'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprTouPac'
+        in: body
+        name: body
+      tags:
+      - GdprTouPac
+      consumes:
+      - application/json
+  /rest/GdprPacPvdEnt:
+    get:
+      summary: Search GdprPacPvdEnt business object records or get contextualized
+        metadata
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpacpvdent-search
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/ArrayOfGdprPacPvdEnt'
+          description: Success in searching business object records (or in getting
+            contextualized business object metadata, documentation, ...)
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: query
+        name: _metadata
+        description: Metadata?
+        type: boolean
+        required: false
+      - in: query
+        name: _count
+        description: Count?
+        type: boolean
+        required: false
+      - in: query
+        name: _doc
+        description: Documentation?
+        type: boolean
+        required: false
+      - in: query
+        name: _indexsearch
+        description: Index search query
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntPacPvdId
+        description: Search filter for Private Data
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntPacPvdId__gdprPacPvdUid
+        description: Search filter for Personal Data sim pac pvd UID
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntPacPvdId__gdprPacPvdPacId
+        description: Search filter for Sub-Process
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntPacPvdId__gdprPacPvdPacId__gdprPacName
+        description: Search filter for Sub-process name
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntPacPvdId__gdprPacPvdPacId__gdprPacPcsId
+        description: Search filter for Process
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntPacPvdId__gdprPacPvdPacId__gdprPacPcsId__gdprPcsName
+        description: Search filter for Process name
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntPacPvdId__gdprPacPvdPvdId
+        description: Search filter for Private Data
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntPacPvdId__gdprPacPvdPvdId__gdprPvdName
+        description: Search filter for Private data name
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntPacPvdId__gdprPacPvdPvdId__gdprPvdCat
+        description: Search filter for Personal Data Personal Data Data classification
+        type: string
+        required: false
+        enum:
+        - ID
+        - PERS
+        - ECO
+        - LOGIN
+        - LOCAL
+      - in: query
+        name: gdprPacPvdEntEntId
+        description: Search filter for Entity
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntEntId__gdprEntName
+        description: Search filter for Entity Business Unit Name
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdEntType
+        description: Search filter for Type
+        type: string
+        required: false
+        enum:
+        - PROVIDING
+        - CONSUMING
+        - PROCESSING
+      - in: query
+        name: gdprPacPvdEntChannel
+        description: Search filter for Channel
+        type: string
+        required: false
+        enum:
+        - UI
+        - MANUAL
+        - WS
+        - FTP
+        - OTHER
+      tags:
+      - GdprPacPvdEnt
+  /rest/GdprEntEnt:
+    get:
+      summary: Search GdprEntEnt business object records or get contextualized metadata
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprentent-search
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/ArrayOfGdprEntEnt'
+          description: Success in searching business object records (or in getting
+            contextualized business object metadata, documentation, ...)
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: query
+        name: _metadata
+        description: Metadata?
+        type: boolean
+        required: false
+      - in: query
+        name: _count
+        description: Count?
+        type: boolean
+        required: false
+      - in: query
+        name: _doc
+        description: Documentation?
+        type: boolean
+        required: false
+      - in: query
+        name: gdprEntEntElementId
+        description: Search filter for Sim ent ent sim entity id
+        type: string
+        required: false
+      - in: query
+        name: gdprEntEntElementId__gdprEntName
+        description: Search filter for Sim ent ent sim entity id Business Unit Name
+        type: string
+        required: false
+      - in: query
+        name: gdprEntEntElementId__gdprEntLegalName
+        description: Search filter for Sim ent ent sim entity id Legal Name
+        type: string
+        required: false
+      - in: query
+        name: gdprEntEntElementId__gdprEntDescription
+        description: Search filter for Sim ent ent sim entity id Description
+        type: string
+        required: false
+      - in: query
+        name: gdprEntEntEnclosingId
+        description: Search filter for Sim ent ent enclosing id
+        type: string
+        required: false
+      - in: query
+        name: gdprEntEntEnclosingId__gdprEntName
+        description: Search filter for Sim ent ent enclosing id Business Unit Name
+        type: string
+        required: false
+      - in: query
+        name: gdprEntEntEnclosingId__gdprEntLegalName
+        description: Search filter for Sim ent ent enclosing id Legal Name
+        type: string
+        required: false
+      - in: query
+        name: gdprEntEntEnclosingId__gdprEntDescription
+        description: Search filter for Sim ent ent enclosing id Description
+        type: string
+        required: false
+      tags:
+      - GdprEntEnt
+  /rest/GdprProcessingActivityHistoric/{row_id}:
+    post:
+      summary: Create a new GdprProcessingActivityHistoricbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprocessingactivityhistoric-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprProcessingActivityHistoric'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprProcessingActivityHistoric'
+        in: body
+        name: body
+      tags:
+      - GdprProcessingActivityHistoric
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprProcessingActivityHistoric business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprocessingactivityhistoric-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprProcessingActivityHistoric'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprProcessingActivityHistoric
+    delete:
+      summary: Delete a GdprProcessingActivityHistoric business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprocessingactivityhistoric-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprProcessingActivityHistoric
+    put:
+      summary: Update a GdprProcessingActivityHistoricbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprocessingactivityhistoric-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprProcessingActivityHistoric'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprProcessingActivityHistoric'
+        in: body
+        name: body
+      tags:
+      - GdprProcessingActivityHistoric
+      consumes:
+      - application/json
+  /rest/GdprPacPvd:
+    get:
+      summary: Search GdprPacPvd business object records or get contextualized metadata
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpacpvd-search
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/ArrayOfGdprPacPvd'
+          description: Success in searching business object records (or in getting
+            contextualized business object metadata, documentation, ...)
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: query
+        name: _metadata
+        description: Metadata?
+        type: boolean
+        required: false
+      - in: query
+        name: _count
+        description: Count?
+        type: boolean
+        required: false
+      - in: query
+        name: _doc
+        description: Documentation?
+        type: boolean
+        required: false
+      - in: query
+        name: _indexsearch
+        description: Index search query
+        type: string
+        required: false
+      - in: query
+        name: gdprPiaPacPvdId
+        description: Search filter for Sim PIA sim pac pvd id
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdPacId
+        description: Search filter for Sub-Process
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdPacId__gdprPacPcsId
+        description: Search filter for Process
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdPacId__gdprPacPcsId__gdprPcsName
+        description: Search filter for Process name
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdPacId__gdprPacName
+        description: Search filter for Sub-process name
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdPacId__gdprPacId
+        description: Search filter for Sub-Process Processing Activity ID
+        type: integer
+        required: false
+      - in: query
+        name: gdprPacPvdPvdId
+        description: Search filter for Private Data
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdPvdId__gdprPvdName
+        description: Search filter for Private data name
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdPvdId__gdprPvdId
+        description: Search filter for Personal Data ID
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdPvdId__gdprPvdCat
+        description: Search filter for Personal Data Data classification
+        type: string
+        required: false
+        enum:
+        - ID
+        - PERS
+        - ECO
+        - LOGIN
+        - LOCAL
+      - in: query
+        name: gdprPacPvdVolume
+        description: Search filter for Volume
+        type: integer
+        required: false
+      - in: query
+        name: gdprPacPvdConsent
+        description: Search filter for Consent?
+        type: boolean
+        required: false
+      - in: query
+        name: gdprPacPvdPerformanceOfaContact
+        description: Search filter for Performance of a contact
+        type: boolean
+        required: false
+      - in: query
+        name: gdprPacPvdComplianceWithAlegalObligation
+        description: Search filter for Compliance with a legal obligation
+        type: boolean
+        required: false
+      - in: query
+        name: gdprImPacPvdProtectVitalInterests
+        description: Search filter for Protect vital interests of an individual
+        type: boolean
+        required: false
+      - in: query
+        name: gdprPacPvdPublicInterest
+        description: Search filter for Public interest
+        type: boolean
+        required: false
+      - in: query
+        name: gdprPacPvdLegitimateInterest
+        description: Search filter for Legitimate interest
+        type: boolean
+        required: false
+      - in: query
+        name: gdprPacPvdDelai
+        description: Search filter for Deletion time
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPvdUid
+        description: Search filter for sim pac pvd UID
+        type: string
+        required: false
+      tags:
+      - GdprPacPvd
+  /rest/GdprProcessingActivityHistoric:
+    get:
+      summary: Search GdprProcessingActivityHistoric business object records or get
+        contextualized metadata
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprocessingactivityhistoric-search
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/ArrayOfGdprProcessingActivityHistoric'
+          description: Success in searching business object records (or in getting
+            contextualized business object metadata, documentation, ...)
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: query
+        name: _metadata
+        description: Metadata?
+        type: boolean
+        required: false
+      - in: query
+        name: _count
+        description: Count?
+        type: boolean
+        required: false
+      - in: query
+        name: _doc
+        description: Documentation?
+        type: boolean
+        required: false
+      - in: query
+        name: row_ref_id
+        description: Search filter for Record row ID
+        type: string
+        required: false
+      - in: query
+        name: row_idx
+        description: Search filter for History record index
+        type: integer
+        required: false
+      - in: query
+        name: created_by_hist
+        description: Search filter for Created by
+        type: string
+        required: false
+      - in: query
+        name: created_dt_hist
+        description: Search filter for Created date
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPcsId
+        description: Search filter for Process
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPcsId__gdprPcsName
+        description: Search filter for Process name
+        type: string
+        required: false
+      - in: query
+        name: gdprPacPcsId__gdprPcsId
+        description: Search filter for Process Process ID
+        type: string
+        required: false
+      - in: query
+        name: gdprPacName
+        description: Search filter for Sub-process name
+        type: string
+        required: false
+      - in: query
+        name: gdprPacRef
+        description: Search filter for Reference
+        type: string
+        required: false
+      - in: query
+        name: gdprPacDateCrea
+        description: Search filter for Date de créatioe du traitement
+        type: string
+        required: false
+      - in: query
+        name: gdprPacDateMaj
+        description: Search filter for Date de mise à jour du traitement
+        type: string
+        required: false
+      - in: query
+        name: gdprPacFinalitePrincipale
+        description: Search filter for Finalité principale
+        type: string
+        required: false
+      - in: query
+        name: gdprPacFinaliteSous
+        description: Search filter for Sous-finalité du traitement
+        type: string
+        required: false
+      - in: query
+        name: gdprPacUe
+        description: Search filter for Hors UE Oui/Non
+        type: boolean
+        required: false
+      - in: query
+        name: gdprPacMesuresSecuTech
+        description: Search filter for Mesures de sécurité techniques
+        type: string
+        required: false
+      - in: query
+        name: gdprPacMesuresSecuOrga
+        description: Search filter for Mesures de sécurité organisationnelles
+        type: string
+        required: false
+      - in: query
+        name: gdprPacActorActorId
+        description: Search filter for Actor
+        type: string
+        required: false
+      - in: query
+        name: gdprPacActorActorId__usr_login
+        description: Search filter for Login
+        type: string
+        required: false
+      - in: query
+        name: gdprPacActorActorId__usr_last_name
+        description: Search filter for Last name
+        type: string
+        required: false
+      - in: query
+        name: gdprPacActorActorId__usr_first_name
+        description: Search filter for First name
+        type: string
+        required: false
+      - in: query
+        name: gdprPacCatPeople
+        description: Search filter for Type of people concerned
+        type: string
+        required: false
+        enum:
+        - SAL
+        - CLI
+        - PAT
+        - PRO
+        - OTR
+      - in: query
+        name: gdprPacPersConOther
+        description: Search filter for Other
+        type: string
+        required: false
+      - in: query
+        name: gdprPacCompGlobal
+        description: Search filter for Progress
+        type: integer
+        required: false
+      - in: query
+        name: gdprPacCompActor
+        description: Search filter for Flag that indicates if completion for the "Actor"
+          section is complete
+        type: boolean
+        required: false
+      - in: query
+        name: gdprPacCompFinal
+        description: Search filter for sim pac final complete
+        type: boolean
+        required: false
+      - in: query
+        name: gdprPacCompSecurity
+        description: Search filter for sim pac comp security
+        type: boolean
+        required: false
+      - in: query
+        name: gdprPacCompData
+        description: Search filter for sim pac com data
+        type: boolean
+        required: false
+      - in: query
+        name: gdprPacCompDest
+        description: Search filter for sim pac comp dest
+        type: boolean
+        required: false
+      tags:
+      - GdprProcessingActivityHistoric
+  /rest/GdprTransferOutUe/{row_id}:
+    post:
+      summary: Create a new GdprTransferOutUebusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprtransferoutue-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprTransferOutUe'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprTransferOutUe'
+        in: body
+        name: body
+      tags:
+      - GdprTransferOutUe
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprTransferOutUe business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprtransferoutue-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprTransferOutUe'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprTransferOutUe
+    delete:
+      summary: Delete a GdprTransferOutUe business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprtransferoutue-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprTransferOutUe
+    put:
+      summary: Update a GdprTransferOutUebusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprtransferoutue-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprTransferOutUe'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprTransferOutUe'
+        in: body
+        name: body
+      tags:
+      - GdprTransferOutUe
+      consumes:
+      - application/json
+  /rest/GdprPrivateData/{row_id}:
+    post:
+      summary: Create a new GdprPrivateDatabusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprivatedata-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPrivateData'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprPrivateData'
+        in: body
+        name: body
+      tags:
+      - GdprPrivateData
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprPrivateData business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprivatedata-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPrivateData'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprPrivateData
+    delete:
+      summary: Delete a GdprPrivateData business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprivatedata-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprPrivateData
+    put:
+      summary: Update a GdprPrivateDatabusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprprivatedata-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPrivateData'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprPrivateData'
+        in: body
+        name: body
+      tags:
+      - GdprPrivateData
+      consumes:
+      - application/json
+  /rest/GdprPvdPvd:
+    get:
+      summary: Search GdprPvdPvd business object records or get contextualized metadata
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpvdpvd-search
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/ArrayOfGdprPvdPvd'
+          description: Success in searching business object records (or in getting
+            contextualized business object metadata, documentation, ...)
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: query
+        name: _metadata
+        description: Metadata?
+        type: boolean
+        required: false
+      - in: query
+        name: _count
+        description: Count?
+        type: boolean
+        required: false
+      - in: query
+        name: _doc
+        description: Documentation?
+        type: boolean
+        required: false
+      - in: query
+        name: _indexsearch
+        description: Index search query
+        type: string
+        required: false
+      - in: query
+        name: gdprPvdPvdEnclosingId
+        description: Search filter for Enclosing private data
+        type: string
+        required: false
+      - in: query
+        name: gdprPvdPvdEnclosingId__gdprPvdName
+        description: Search filter for Private data name
+        type: string
+        required: false
+      - in: query
+        name: gdprPvdPvdEnclosingId__gdprPvdId
+        description: Search filter for Enclosing Data ID
+        type: string
+        required: false
+      - in: query
+        name: gdprPvdPvdElementId
+        description: Search filter for Element private data
+        type: string
+        required: false
+      - in: query
+        name: gdprPvdPvdElementId__gdprPvdName
+        description: Search filter for Private data name
+        type: string
+        required: false
+      - in: query
+        name: gdprPvdPvdElementId__gdprPvdId
+        description: Search filter for Element Data ID
+        type: string
+        required: false
+      tags:
+      - GdprPvdPvd
+  /rest/GdprActorPac/{row_id}:
+    post:
+      summary: Create a new GdprActorPacbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdpractorpac-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprActorPac'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprActorPac'
+        in: body
+        name: body
+      tags:
+      - GdprActorPac
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprActorPac business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdpractorpac-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprActorPac'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprActorPac
+    delete:
+      summary: Delete a GdprActorPac business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdpractorpac-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprActorPac
+    put:
+      summary: Update a GdprActorPacbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdpractorpac-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprActorPac'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprActorPac'
+        in: body
+        name: body
+      tags:
+      - GdprActorPac
+      consumes:
+      - application/json
+  /rest/GdprPia/{row_id}:
+    post:
+      summary: Create a new GdprPiabusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpia-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPia'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprPia'
+        in: body
+        name: body
+      tags:
+      - GdprPia
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprPia business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpia-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPia'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprPia
+    delete:
+      summary: Delete a GdprPia business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpia-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprPia
+    put:
+      summary: Update a GdprPiabusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpia-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPia'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprPia'
+        in: body
+        name: body
+      tags:
+      - GdprPia
+      consumes:
+      - application/json
+  /rest/GdprApplication/{row_id}:
+    post:
+      summary: Create a new GdprApplicationbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprapplication-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprApplication'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprApplication'
+        in: body
+        name: body
+      tags:
+      - GdprApplication
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprApplication business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprapplication-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprApplication'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprApplication
+    delete:
+      summary: Delete a GdprApplication business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprapplication-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprApplication
+    put:
+      summary: Update a GdprApplicationbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprapplication-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprApplication'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprApplication'
+        in: body
+        name: body
+      tags:
+      - GdprApplication
+      consumes:
+      - application/json
+  /rest/GdprPacPvdApp/{row_id}:
+    post:
+      summary: Create a new GdprPacPvdAppbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpacpvdapp-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPacPvdApp'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprPacPvdApp'
+        in: body
+        name: body
+      tags:
+      - GdprPacPvdApp
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprPacPvdApp business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpacpvdapp-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPacPvdApp'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprPacPvdApp
+    delete:
+      summary: Delete a GdprPacPvdApp business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpacpvdapp-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprPacPvdApp
+    put:
+      summary: Update a GdprPacPvdAppbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpacpvdapp-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPacPvdApp'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprPacPvdApp'
+        in: body
+        name: body
+      tags:
+      - GdprPacPvdApp
+      consumes:
+      - application/json
+  /rest/GdprPacPvdEnt/{row_id}:
+    post:
+      summary: Create a new GdprPacPvdEntbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpacpvdent-create
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPacPvdEnt'
+          description: Success in creating a new business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprPacPvdEnt'
+        in: body
+        name: body
+      tags:
+      - GdprPacPvdEnt
+      consumes:
+      - application/json
+    get:
+      summary: Get a GdprPacPvdEnt business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpacpvdent-get
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPacPvdEnt'
+          description: Success in getting a single business object record
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - in: query
+        name: _inline_documents
+        description: Inline documents?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        type: boolean
+        required: false
+      - in: query
+        name: _inline_objects
+        description: Inline objects?
+        type: boolean
+        required: false
+      tags:
+      - GdprPacPvdEnt
+    delete:
+      summary: Delete a GdprPacPvdEnt business object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpacpvdent-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      tags:
+      - GdprPacPvdEnt
+    put:
+      summary: Update a GdprPacPvdEntbusiness object record
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprpacpvdent-update
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GdprPacPvdEnt'
+          description: Success in updating a business object record
+        '400':
+          schema:
+            $ref: '#/definitions/Error400'
+          description: Bad request
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+        '404':
+          schema:
+            $ref: '#/definitions/Error404'
+          description: Not found
+      parameters:
+      - in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        type: string
+        required: true
+      - schema:
+          $ref: '#/definitions/GdprPacPvdEnt'
+        in: body
+        name: body
+      tags:
+      - GdprPacPvdEnt
+      consumes:
+      - application/json
+  /rest/GdprEntity:
+    get:
+      summary: Search GdprEntity business object records or get contextualized metadata
+      security:
+      - bearerAuth: []
+      produces:
+      - application/json
+      operationId: obj-gdprentity-search
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/ArrayOfGdprEntity'
+          description: Success in searching business object records (or in getting
+            contextualized business object metadata, documentation, ...)
+        '401':
+          schema:
+            $ref: '#/definitions/Error401'
+          description: Unauthorized
+        '500':
+          schema:
+            $ref: '#/definitions/Error500'
+          description: Internal server error
+      parameters:
+      - in: query
+        name: _metadata
+        description: Metadata?
+        type: boolean
+        required: false
+      - in: query
+        name: _count
+        description: Count?
+        type: boolean
+        required: false
+      - in: query
+        name: _doc
+        description: Documentation?
+        type: boolean
+        required: false
+      - in: query
+        name: gdprEntName
+        description: Search filter for Business Unit Name
+        type: string
+        required: false
+      - in: query
+        name: gdprEntityProcessingActivityFk
+        description: Search filter for Sim entity sim processing activity id
+        type: string
+        required: false
+      - in: query
+        name: gdprEntLegalName
+        description: Search filter for Legal Name
+        type: string
+        required: false
+      - in: query
+        name: gdprEntLogo
+        description: Search filter for Entity's logo
+        type: string
+        required: false
+      - in: query
+        name: gdprEntDescription
+        description: Search filter for Description
+        type: string
+        required: false
+      tags:
+      - GdprEntity
   /rest/GdprTransferOutUe:
     get:
       summary: Search GdprTransferOutUe business object records or get contextualized
@@ -6362,40 +6430,6 @@ paths:
         description: Search filter for UUID
         type: string
         required: false
-      tags:
-      - GdprActor
-  /rest/GdprActor/{row_id}/publication:User-EXCEL:
-    get:
-      summary: Call a custom publication for a GdprActor business object record or
-        for all records
-      security:
-      - bearerAuth: []
-      produces:
-      - application/json
-      operationId: obj-gdpractor-publication-user-excel
-      responses:
-        '200':
-          schema:
-            $ref: '#/definitions/PublicationResult'
-          description: Success in calling the custom publication
-        '401':
-          schema:
-            $ref: '#/definitions/Error401'
-          description: Unauthorized
-        '500':
-          schema:
-            $ref: '#/definitions/Error500'
-          description: Internal server error
-        '404':
-          schema:
-            $ref: '#/definitions/Error404'
-          description: Not found
-      parameters:
-      - in: path
-        name: row_id
-        description: Row ID (or empty or _ for all row IDs)
-        type: string
-        required: true
       tags:
       - GdprActor
   /rest/GdprPrivateData:

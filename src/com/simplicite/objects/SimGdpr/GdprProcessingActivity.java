@@ -75,7 +75,7 @@ public class GdprProcessingActivity extends ObjectDB {
 	}
 	
 	@Override
-	public String preUpdate() {
+	public String preSave() {
 		
 		Grant g = getGrant();
 		
@@ -99,13 +99,13 @@ public class GdprProcessingActivity extends ObjectDB {
 		completionList.add(getFieldValue("gdprPacCompData"));
 		completionList.add(getFieldValue("gdprPacCompDest"));
 		
-		int globalCompletion = 0;
+		double globalCompletion = 0;
 		for(String item : completionList){
 			if(item == "1")
 				globalCompletion++;
 		}
 		
-		int compPercentage = (globalCompletion/5)*100;
+		double compPercentage = (globalCompletion/5)*100;
 		setFieldValue("gdprPacCompGlobal", compPercentage);
 		
 		return null;
@@ -120,11 +120,15 @@ public class GdprProcessingActivity extends ObjectDB {
 		int nbFieldsInArea = fields.size();
 		int nbFieldsCompleted = 0;
 		for(ObjectField field : fields){
+			AppLog.info(field.getName(), getGrant());
 			String fieldValue = field.getValue();
 			if(!"".equals(fieldValue)){
 				nbFieldsCompleted ++;	
 			}
 		}
+		AppLog.info(faName, getGrant());
+		AppLog.info(String.valueOf(nbFieldsInArea), getGrant());
+		AppLog.info(String.valueOf(nbFieldsCompleted), getGrant());
 		return nbFieldsCompleted == nbFieldsInArea;
 		
 	}

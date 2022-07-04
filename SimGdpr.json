@@ -79,7 +79,7 @@
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/SimGdpr/GdprActor.java",
-       "size": 523,
+       "size": 264,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "GdprActor.java",
@@ -242,8 +242,8 @@
           "obf_inline": false,
           "obf_rendering": null,
           "obf_treedepth": null,
-          "obf_area_id__ofa_name": null,
-          "obf_area_id__ofa_position": null,
+          "obf_area_id__ofa_name": "GdprProcessingActivity-10",
+          "obf_area_id__ofa_position": 10,
           "row_module_id__mdl_name": "SimGdpr"
          }
         },
@@ -381,11 +381,11 @@
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/SimGdpr/GdprActorPac.java",
-       "size": 2121,
+       "size": 1061,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "GdprActorPac.java",
-       "id": "4671",
+       "id": "4741",
        "object": "ObjectInternal",
        "rowid": "2014"
       },
@@ -415,7 +415,7 @@
        "E"
       ],
       "obo_useform": true,
-      "obo_title": null,
+      "obo_title": "[VALUE:usr_first_name] [VALUE:usr_last_name] [VALUE:gdprActorType]",
       "obo_icon": "fas/user-circle",
       "obo_refcount": false,
       "obo_tree": false,
@@ -1879,11 +1879,11 @@
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/SimGdpr/GdprApplication.java",
-       "size": 436,
+       "size": 276,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "GdprApplication.java",
-       "id": "4672",
+       "id": "4757",
        "object": "ObjectInternal",
        "rowid": "2036"
       },
@@ -1909,7 +1909,7 @@
       "obo_listsearch": true,
       "obo_list_edit": ["N"],
       "obo_useform": true,
-      "obo_title": null,
+      "obo_title": "[VALUE:gdprAppName] ([VALUE:gdprAppIdentifier])",
       "obo_icon": "fas/cloud",
       "obo_refcount": true,
       "obo_tree": false,
@@ -5415,7 +5415,7 @@
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/SimGdpr/GdprPacPvd.java",
-       "size": 390,
+       "size": 263,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "GdprPacPvd.java",
@@ -5449,7 +5449,7 @@
        "E"
       ],
       "obo_useform": true,
-      "obo_title": null,
+      "obo_title": "[VALUE:gdprPvdName]",
       "obo_icon": "fas/clipboard-list",
       "obo_refcount": true,
       "obo_tree": false,
@@ -8129,7 +8129,7 @@
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/SimGdpr/GdprPacPvdApp.java",
-       "size": 378,
+       "size": 269,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "GdprPacPvdApp.java",
@@ -8163,7 +8163,7 @@
        "E"
       ],
       "obo_useform": true,
-      "obo_title": null,
+      "obo_title": "[VALUE:gdprPacPvdEntType]",
       "obo_icon": "fas/clipboard-check",
       "obo_refcount": false,
       "obo_tree": false,
@@ -9408,7 +9408,7 @@
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/SimGdpr/GdprPacPvdEnt.java",
-       "size": 404,
+       "size": 271,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "GdprPacPvdEnt.java",
@@ -9442,7 +9442,7 @@
        "E"
       ],
       "obo_useform": true,
-      "obo_title": null,
+      "obo_title": "[VALUE:gdprPacPvdEntType]",
       "obo_icon": "fas/clipboard-check",
       "obo_refcount": true,
       "obo_tree": false,
@@ -10889,7 +10889,7 @@
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/SimGdpr/GdprPia.java",
-       "size": 3893,
+       "size": 3310,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "GdprPia.java",
@@ -22827,7 +22827,7 @@
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/SimGdpr/GdprPrivateData.java",
-       "size": 430,
+       "size": 273,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "GdprPrivateData.java",
@@ -22861,7 +22861,7 @@
        "E"
       ],
       "obo_useform": true,
-      "obo_title": null,
+      "obo_title": "[VALUE:gdprName] [VALUE:gdprPvdCategory]",
       "obo_icon": "fas/puzzle-piece",
       "obo_refcount": true,
       "obo_tree": false,
@@ -23828,7 +23828,7 @@
            "csi_object_prop": null,
            "csi_field_prop": "V",
            "csi_apply": "F",
-           "csi_expr": "[VALUE:simPvdSensitive]=='1'",
+           "csi_expr": "[VALUE:gdprPvdSensitive]=='1'",
            "csi_target": null,
            "csi_objfield_id__obf_object_id__obo_name": "GdprPrivateData",
            "csi_objfield_id__obf_field_id__fld_name": "gdprPvdSensitiveCat",
@@ -23856,7 +23856,7 @@
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/SimGdpr/GdprProcess.java",
-       "size": 368,
+       "size": 265,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "GdprProcess.java",
@@ -23890,7 +23890,7 @@
        "E"
       ],
       "obo_useform": true,
-      "obo_title": null,
+      "obo_title": "[VALUE:gdprPcsName]",
       "obo_icon": "fas/cogs",
       "obo_refcount": true,
       "obo_tree": false,
@@ -24317,8 +24317,8 @@
           "obf_inline": false,
           "obf_rendering": null,
           "obf_treedepth": null,
-          "obf_area_id__ofa_name": null,
-          "obf_area_id__ofa_position": null,
+          "obf_area_id__ofa_name": "GdprProcessingActivity-14",
+          "obf_area_id__ofa_position": 14,
           "row_module_id__mdl_name": "SimGdpr"
          }
         },
@@ -24476,11 +24476,11 @@
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/SimGdpr/GdprProcessingActivity.java",
-       "size": 4268,
+       "size": 4376,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "GdprProcessingActivity.java",
-       "id": "4683",
+       "id": "5128",
        "object": "ObjectInternal",
        "rowid": "2028"
       },
@@ -24510,7 +24510,7 @@
        "E"
       ],
       "obo_useform": true,
-      "obo_title": null,
+      "obo_title": "[VALUE:gdprPacName] [VALUE:gdprPcsName]",
       "obo_icon": "fas/sync-alt",
       "obo_refcount": true,
       "obo_tree": false,
@@ -24619,8 +24619,8 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "SimProcessingActivity-2",
-          "obf_area_id__ofa_position": 2,
+          "obf_area_id__ofa_name": "GdprProcessingActivity-13",
+          "obf_area_id__ofa_position": 1,
           "row_module_id__mdl_name": "SimGdpr"
          }
         },
@@ -24655,8 +24655,8 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": null,
-          "obf_area_id__ofa_position": null,
+          "obf_area_id__ofa_name": "GdprProcessingActivity-14",
+          "obf_area_id__ofa_position": 14,
           "row_module_id__mdl_name": "SimGdpr"
          }
         },
@@ -24691,8 +24691,8 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "SimProcessingActivity-13",
-          "obf_area_id__ofa_position": 1,
+          "obf_area_id__ofa_name": "GdprProcessingActivity-14",
+          "obf_area_id__ofa_position": 14,
           "row_module_id__mdl_name": "SimGdpr"
          },
          "links": [{
@@ -24750,8 +24750,8 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "SimProcessingActivity-13",
-          "obf_area_id__ofa_position": 1,
+          "obf_area_id__ofa_name": "GdprProcessingActivity-14",
+          "obf_area_id__ofa_position": 14,
           "row_module_id__mdl_name": "SimGdpr"
          }
         },
@@ -24786,7 +24786,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "SimProcessingActivity-13",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-13",
           "obf_area_id__ofa_position": 1,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -24864,7 +24864,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-3",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-3",
           "obf_area_id__ofa_position": 3,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -24900,7 +24900,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-3",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-3",
           "obf_area_id__ofa_position": 3,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -25029,7 +25029,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-3",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-3",
           "obf_area_id__ofa_position": 3,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -25158,7 +25158,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-5",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-5",
           "obf_area_id__ofa_position": 5,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -25287,7 +25287,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-5",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-5",
           "obf_area_id__ofa_position": 5,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -25416,7 +25416,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-12",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-12",
           "obf_area_id__ofa_position": 12,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -25546,7 +25546,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-6",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-6",
           "obf_area_id__ofa_position": 6,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -25675,7 +25675,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-6",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-6",
           "obf_area_id__ofa_position": 6,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -25804,8 +25804,8 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": null,
-          "obf_area_id__ofa_position": null,
+          "obf_area_id__ofa_name": "GdprProcessingActivity-10",
+          "obf_area_id__ofa_position": 10,
           "row_module_id__mdl_name": "SimGdpr"
          },
          "links": [{
@@ -25933,8 +25933,8 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-10",
-          "obf_area_id__ofa_position": 10,
+          "obf_area_id__ofa_name": "GdprProcessingActivity-14",
+          "obf_area_id__ofa_position": 14,
           "row_module_id__mdl_name": "SimGdpr"
          }
         },
@@ -25969,7 +25969,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-10",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-10",
           "obf_area_id__ofa_position": 10,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -26047,7 +26047,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-10",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-10",
           "obf_area_id__ofa_position": 10,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -26125,7 +26125,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-11",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-11",
           "obf_area_id__ofa_position": 11,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -26254,7 +26254,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-11",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-11",
           "obf_area_id__ofa_position": 11,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -26383,7 +26383,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -26512,7 +26512,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -26641,7 +26641,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -26770,7 +26770,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -26899,7 +26899,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -27028,7 +27028,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          },
@@ -27177,7 +27177,7 @@
           "obf_field_id__fld_fonctid": false,
           "obf_cascad": "R",
           "obf_card": "0,n",
-          "obf_query": "t.row_id in (SELECT ent.row_id\nFROM sim_entity ent,\n\tsim_pacpvd_ent pacpvdent,\n\tsim_pac_pvd pacpvd,\n\tsim_processingactivity act\nWHERE pacpvdent.pacpvdent_ent_id=ent.row_id\n  AND pacpvdent.pacpvdent_pacpvd_id=pacpvd.row_id\n  AND pacpvd.pacpvd_pac_id = act.row_id\n  AND act.row_id = [row_id])",
+          "obf_query": "t.row_id in (SELECT ent.row_id\nFROM gdpr_entity ent \nJOIN gdpr_pac_pvd_ent pacpvdent ON gdpr_pac_pvd_ent_ent_id = ent.row_id\nJOIN gdpr_pac_pvd pacpvd ON gdpr_pac_pvd_pvd_id = pacpvd.row_id\nJOIN gdpr_processing_activity act ON pacpvd_pac_id = act.row_id\nWHERE act.row_id = [row_id])",
           "obf_visible": true,
           "obf_ref_export": true,
           "obf_copy": false,
@@ -27541,7 +27541,7 @@
           {
            "object": "Action",
            "label": "Action",
-           "icon": "img/system/action",
+           "icon": "img/system/action_btn",
            "field": "",
            "list": [{
             "object": "Action",
@@ -27644,7 +27644,7 @@
            "csi_object_prop": null,
            "csi_field_prop": null,
            "csi_apply": "T",
-           "csi_expr": "[VALUE:simPacUE]=='1'",
+           "csi_expr": "[VALUE:gdprPacUe]=='1'",
            "csi_target": {
             "item": {
              "obf_object_id__obj_name": "GdprTouPac",
@@ -28174,7 +28174,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-3",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-3",
           "obf_area_id__ofa_position": 3,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28210,7 +28210,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-3",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-3",
           "obf_area_id__ofa_position": 3,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28246,7 +28246,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-3",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-3",
           "obf_area_id__ofa_position": 3,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28282,7 +28282,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-5",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-5",
           "obf_area_id__ofa_position": 5,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28318,7 +28318,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-5",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-5",
           "obf_area_id__ofa_position": 5,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28354,7 +28354,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-12",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-12",
           "obf_area_id__ofa_position": 12,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28390,7 +28390,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-6",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-6",
           "obf_area_id__ofa_position": 6,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28426,7 +28426,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-6",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-6",
           "obf_area_id__ofa_position": 6,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28498,7 +28498,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-10",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-10",
           "obf_area_id__ofa_position": 10,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28534,7 +28534,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-10",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-10",
           "obf_area_id__ofa_position": 10,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28570,7 +28570,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-10",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-10",
           "obf_area_id__ofa_position": 10,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28606,7 +28606,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-11",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-11",
           "obf_area_id__ofa_position": 11,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28642,7 +28642,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-11",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-11",
           "obf_area_id__ofa_position": 11,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28678,7 +28678,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28714,7 +28714,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28750,7 +28750,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28786,7 +28786,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28822,7 +28822,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -28858,7 +28858,7 @@
           "obf_fld_exportable": null,
           "obf_field_id__fld_exportable": true,
           "obf_fld_uk": null,
-          "obf_area_id__ofa_name": "GdprProcessingActivityHistoric-15",
+          "obf_area_id__ofa_name": "GdprProcessingActivity-15",
           "obf_area_id__ofa_position": 15,
           "row_module_id__mdl_name": "SimGdpr"
          }
@@ -30364,7 +30364,7 @@
            "csi_object_prop": null,
            "csi_field_prop": "V",
            "csi_apply": "F",
-           "csi_expr": "[VALUE:simRecepType] == \"OTHER\"",
+           "csi_expr": "[VALUE:gdprRecepType] == \"OTHER\"",
            "csi_target": null,
            "csi_objfield_id__obf_object_id__obo_name": "GdprRecepient",
            "csi_objfield_id__obf_field_id__fld_name": "gdprRecepOther",
@@ -33294,7 +33294,7 @@
   {
    "object": "Action",
    "label": "Actions",
-   "icon": "img/system/action",
+   "icon": "img/system/action_btn",
    "field": "row_module_id",
    "list": [
     {
@@ -42517,7 +42517,7 @@
      "thm_base": "dark",
      "thm_css_doc": {
       "path": "files/Theme/ThemeDarkRGPD/ThemeDarkRGPD_gen.css",
-      "size": 147022,
+      "size": 147250,
       "field": "thm_css_doc",
       "mime": "text/css",
       "name": "ThemeDarkRGPD_gen.css",
@@ -43277,7 +43277,7 @@
       "ofa_position": 4,
       "ofa_title": true,
       "ofa_ui": "<div>\n  <div class=\"field\" data-field=\"gdprEntAppEntId\"><\/div>\n  <div class=\"field\" data-field=\"simEntAppEntId__simEntName\"><\/div>\n<\/div>",
-      "ofa_icon": "[EXPR:[OBJECTICON:SimEntity]]",
+      "ofa_icon": "[EXPR:[OBJECTICON:GdprEntity]]",
       "row_module_id__mdl_name": "SimGdpr"
      },
      "links": [{
@@ -43319,7 +43319,7 @@
       "ofa_position": 5,
       "ofa_title": true,
       "ofa_ui": "<div>\n  <div class=\"field\" data-field=\"gdprEntAppAppId\"><\/div>\n  <div class=\"field\" data-field=\"simEntAppAppId__simAppIdentifier\"><\/div>\n  <div class=\"field\" data-field=\"simEntAppAppId__simAppName\"><\/div>\n<\/div>",
-      "ofa_icon": "[EXPR:[OBJECTICON:SimApplication]]",
+      "ofa_icon": "[EXPR:[OBJECTICON:GdprApplication]]",
       "row_module_id__mdl_name": "SimGdpr"
      },
      "links": [{
@@ -43361,7 +43361,7 @@
       "ofa_position": 1,
       "ofa_title": true,
       "ofa_ui": "<div>\n  <div class=\"field\" data-field=\"gdprEntName\"><\/div>\n  <div class=\"field\" data-field=\"gdprEntLegalName\"><\/div>\n<\/div>",
-      "ofa_icon": "[EXPR:[OBJECTICON:SimEntity]]",
+      "ofa_icon": "[EXPR:[OBJECTICON:GdprEntity]]",
       "row_module_id__mdl_name": "SimGdpr"
      },
      "links": [{
@@ -44140,6 +44140,594 @@
     },
     {
      "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-10",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-10",
+      "ofa_position": 10,
+      "ofa_title": true,
+      "ofa_ui": "<div class=\"row\">\n  <div class=\"col-sm-6\">\n    <div class=\"field\" data-field=\"gdprPacActorActorId\"><\/div>\n    <div class=\"field\" data-field=\"gdprPacActorActorId__usr_last_name\"><\/div>\n    <div class=\"field\" data-field=\"gdprPacActorActorId__usr_first_name\"><\/div>\n  <\/div>\n  <div class=\"col-sm-6\"><\/div>\n<\/div>",
+      "ofa_icon": "fas/address-card",
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-10~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-10",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-10",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-10~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-10",
+         "tsl_lang": "FRA",
+         "tsl_value": "Responsable du traitement",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-11",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-11",
+      "ofa_position": 11,
+      "ofa_title": true,
+      "ofa_ui": "<div class=\"row\">\n  <div class=\"col-sm-6\">\n    <div class=\"field\" data-field=\"gdprPacCatPeople\"><\/div>\n  <\/div>\n  <div class=\"col-sm-6\">\n    <div class=\"field\" data-field=\"gdprPacPersConOther\"><\/div>\n  <\/div>\n<\/div>",
+      "ofa_icon": "fas/id-card",
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-11~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-11",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-11",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-11~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-11",
+         "tsl_lang": "FRA",
+         "tsl_value": "Personnes concernées",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-12",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-12",
+      "ofa_position": 12,
+      "ofa_title": true,
+      "ofa_ui": "<div class=\"field\" data-field=\"gdprPacUe\"><\/div>",
+      "ofa_icon": "fas/globe",
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-12~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-12",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-12",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-12~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-12",
+         "tsl_lang": "FRA",
+         "tsl_value": "Traitement hors UE",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-13",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-13",
+      "ofa_position": 1,
+      "ofa_title": true,
+      "ofa_ui": "<div class=\"row\">\n  <div class=\"col-sm-6\">\n    <div class=\"field\" data-field=\"gdprPacId\"><\/div>\n  <\/div>\n  <div class=\"col-sm-6\">\n    <div class=\"field\" data-field=\"gdprPacName\"><\/div>\n  <\/div>\n<\/div>",
+      "ofa_icon": null,
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-13~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-13",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-13",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-13~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-13",
+         "tsl_lang": "FRA",
+         "tsl_value": "Définition",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-14",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-14",
+      "ofa_position": 14,
+      "ofa_title": false,
+      "ofa_ui": "<div>\n  <div class=\"field\" data-field=\"gdprPacPcsId\"><\/div>\n  <div class=\"row\">\n    <div class=\"col-sm-4\">\n      <div class=\"field\" data-field=\"gdprPacPcsId__gdprPcsId\"><\/div>\n      <div class=\"field\" data-field=\"gdprPacPcsId__gdprPcsName\"><\/div>\n    <\/div>\n    <div class=\"col-sm-4\"><\/div>\n    <div class=\"col-sm-4\">\n      <div class=\"field\" data-field=\"gdprPacActorActorId__usr_login\"><\/div>\n    <\/div>\n  <\/div>\n<\/div>",
+      "ofa_icon": null,
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-14~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-14",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-14",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-14~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-14",
+         "tsl_lang": "FRA",
+         "tsl_value": "SimProcessingActivity-14",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-15",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-15",
+      "ofa_position": 15,
+      "ofa_title": true,
+      "ofa_ui": "<div>\n  <div class=\"field\" data-field=\"gdprPacCompGlobal\"><\/div>\n  <div class=\"row\">\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacCompFinal\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacCompActor\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacCompSecurity\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacCompData\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacCompDest\"><\/div>\n    <\/div>\n  <\/div>\n  <div class=\"row\">\n    <div class=\"col-sm-6\"><\/div>\n    <div class=\"col-sm-6\"><\/div>\n  <\/div>\n<\/div>",
+      "ofa_icon": "fas/clipboard-list",
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-15~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-15",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-15",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-15~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-15",
+         "tsl_lang": "FRA",
+         "tsl_value": "Complétude",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-2",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-2",
+      "ofa_position": 2,
+      "ofa_title": false,
+      "ofa_ui": "<div class=\"field\" data-field=\"gdprPacId\"><\/div>",
+      "ofa_icon": null,
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-2~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-2",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-2",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-2~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-2",
+         "tsl_lang": "FRA",
+         "tsl_value": "dsdq",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-3",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-3",
+      "ofa_position": 3,
+      "ofa_title": false,
+      "ofa_ui": "<div>\n  <div class=\"row\">\n    <div class=\"col-sm-6\">\n      <div class=\"field\" data-field=\"gdprPacRef\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacDateCrea\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacDateMaj\"><\/div>\n    <\/div>\n  <\/div>\n  <div class=\"area\" data-area=\"10\"><\/div>\n<\/div>",
+      "ofa_icon": "fas/info-circle",
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-3~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-3",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-3",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-3~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-3",
+         "tsl_lang": "FRA",
+         "tsl_value": "Details",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-4",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-4",
+      "ofa_position": 4,
+      "ofa_title": false,
+      "ofa_ui": "<div class=\"area\" data-area=\"GdprActorPac;gdprActorPacPacId\"><\/div>",
+      "ofa_icon": "fas/user-circle",
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-4~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-4",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-4",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-4~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-4",
+         "tsl_lang": "FRA",
+         "tsl_value": "Acteurs",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-5",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-5",
+      "ofa_position": 5,
+      "ofa_title": false,
+      "ofa_ui": "<div>\n  <div class=\"field\" data-field=\"gdprPacFinalitePrincipale\"><\/div>\n  <div class=\"field\" data-field=\"gdprPacFinaliteSous\"><\/div>\n<\/div>",
+      "ofa_icon": "fas/bullseye",
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-5~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-5",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-5",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-5~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-5",
+         "tsl_lang": "FRA",
+         "tsl_value": "Finalité(s)",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-6",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-6",
+      "ofa_position": 6,
+      "ofa_title": false,
+      "ofa_ui": "<div>\n  <div class=\"field\" data-field=\"gdprPacMesuresSecuTech\"><\/div>\n  <div class=\"field\" data-field=\"gdprPacMesuresSecuOrga\"><\/div>\n<\/div>",
+      "ofa_icon": "fas/lock",
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-6~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-6",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-6",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-6~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-6",
+         "tsl_lang": "FRA",
+         "tsl_value": "Sécurité",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-7",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-7",
+      "ofa_position": 7,
+      "ofa_title": false,
+      "ofa_ui": "<div>\n  <div class=\"area\" data-area=\"11\"><\/div>\n  <div class=\"area\" data-area=\"GdprPacPvd;gdprPacPvdPacId\"><\/div>\n<\/div>",
+      "ofa_icon": "fas/database",
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-7~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-7",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-7",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-7~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-7",
+         "tsl_lang": "FRA",
+         "tsl_value": "Données",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-8",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-8",
+      "ofa_position": 8,
+      "ofa_title": false,
+      "ofa_ui": "<div>\n  <div class=\"area\" data-area=\"GdprRecepPac;gdprRecepPacPacId\"><\/div>\n  <div class=\"area\" data-area=\"12\"><\/div>\n  <div class=\"area\" data-area=\"GdprTouPac;gdprTouPacPacId\"><\/div>\n<\/div>",
+      "ofa_icon": "fas/users",
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-8~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-8",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-8",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-8~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-8",
+         "tsl_lang": "FRA",
+         "tsl_value": "Destinataire(s)",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
+     "userkey": "GdprProcessingActivity-9",
+     "item": {
+      "ofa_name": "GdprProcessingActivity-9",
+      "ofa_position": 9,
+      "ofa_title": true,
+      "ofa_ui": null,
+      "ofa_icon": null,
+      "row_module_id__mdl_name": "SimGdpr"
+     },
+     "links": [{
+      "object": "TranslateFieldArea",
+      "label": "Field area translation",
+      "icon": "img/system/translation",
+      "field": "tsl_id",
+      "list": [
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-9~ENU",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-9",
+         "tsl_lang": "ENU",
+         "tsl_value": "SimProcessingActivity-9",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       },
+       {
+        "object": "TranslateFieldArea",
+        "userkey": "Z~GdprProcessingActivity-9~FRA",
+        "item": {
+         "tsl_typeFieldArea": "Z",
+         "tsl_id__ofa_name": "GdprProcessingActivity-9",
+         "tsl_lang": "FRA",
+         "tsl_value": "SimProcessingActivity-9",
+         "row_module_id__mdl_name": "SimGdpr"
+        }
+       }
+      ]
+     }]
+    },
+    {
+     "object": "ObjectFieldArea",
      "userkey": "GdprProcessingActivityHistoric-1",
      "item": {
       "ofa_name": "GdprProcessingActivityHistoric-1",
@@ -44174,300 +44762,6 @@
          "tsl_id__ofa_name": "GdprProcessingActivityHistoric-1",
          "tsl_lang": "FRA",
          "tsl_value": "Processing activity historic -1",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "GdprProcessingActivityHistoric-10",
-     "item": {
-      "ofa_name": "GdprProcessingActivityHistoric-10",
-      "ofa_position": 10,
-      "ofa_title": true,
-      "ofa_ui": "<div class=\"row\">\n  <div class=\"col-sm-6\">\n    <div class=\"field\" data-field=\"simPacActorActorId\"><\/div>\n    <div class=\"field\" data-field=\"simPacActorActorId__usr_last_name\"><\/div>\n  <\/div>\n  <div class=\"col-sm-6\">\n    <div class=\"field\" data-field=\"simPacActorActorId__usr_login\"><\/div>\n    <div class=\"field\" data-field=\"simPacActorActorId__usr_first_name\"><\/div>\n  <\/div>\n<\/div>",
-      "ofa_icon": "fas/address-card",
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-10~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-10",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-10",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-10~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-10",
-         "tsl_lang": "FRA",
-         "tsl_value": "Responsable du traitement",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "GdprProcessingActivityHistoric-11",
-     "item": {
-      "ofa_name": "GdprProcessingActivityHistoric-11",
-      "ofa_position": 11,
-      "ofa_title": true,
-      "ofa_ui": "<div class=\"row\">\n  <div class=\"col-sm-6\">\n    <div class=\"field\" data-field=\"gdprPacCatPeople\"><\/div>\n  <\/div>\n  <div class=\"col-sm-6\">\n    <div class=\"field\" data-field=\"gdprPacPersConOther\"><\/div>\n  <\/div>\n<\/div>",
-      "ofa_icon": "fas/id-card",
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-11~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-11",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-11",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-11~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-11",
-         "tsl_lang": "FRA",
-         "tsl_value": "Personnes concernées",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "GdprProcessingActivityHistoric-12",
-     "item": {
-      "ofa_name": "GdprProcessingActivityHistoric-12",
-      "ofa_position": 12,
-      "ofa_title": true,
-      "ofa_ui": "<div class=\"field\" data-field=\"gdprPacUe\"><\/div>",
-      "ofa_icon": "fas/globe",
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-12~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-12",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-12",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-12~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-12",
-         "tsl_lang": "FRA",
-         "tsl_value": "Traitement hors UE",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "GdprProcessingActivityHistoric-15",
-     "item": {
-      "ofa_name": "GdprProcessingActivityHistoric-15",
-      "ofa_position": 15,
-      "ofa_title": true,
-      "ofa_ui": "<div>\n  <div class=\"field\" data-field=\"gdprPacCompGlobal\"><\/div>\n  <div class=\"row\">\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacCompFinal\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacCompActor\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacCompSecurity\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacCompData\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacCompDest\"><\/div>\n    <\/div>\n  <\/div>\n  <div class=\"row\">\n    <div class=\"col-sm-6\"><\/div>\n    <div class=\"col-sm-6\"><\/div>\n  <\/div>\n<\/div>",
-      "ofa_icon": "fas/clipboard-list",
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-15~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-15",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-15",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-15~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-15",
-         "tsl_lang": "FRA",
-         "tsl_value": "Complétude",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "GdprProcessingActivityHistoric-3",
-     "item": {
-      "ofa_name": "GdprProcessingActivityHistoric-3",
-      "ofa_position": 3,
-      "ofa_title": false,
-      "ofa_ui": "<div>\n  <div class=\"row\">\n    <div class=\"col-sm-6\">\n      <div class=\"field\" data-field=\"row_ref_id__simPacID\"><\/div>\n      <div class=\"field\" data-field=\"gdprPacRef\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacDateCrea\"><\/div>\n    <\/div>\n    <div class=\"col-sm-3\">\n      <div class=\"field\" data-field=\"gdprPacDateMaj\"><\/div>\n    <\/div>\n  <\/div>\n  <div class=\"field\" data-field=\"simPacPcsId\"><\/div>\n  <div class=\"area\" data-area=\"10\"><\/div>\n<\/div>",
-      "ofa_icon": "fas/info-circle",
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-3~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-3",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-3",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-3~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-3",
-         "tsl_lang": "FRA",
-         "tsl_value": "Details",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "GdprProcessingActivityHistoric-5",
-     "item": {
-      "ofa_name": "GdprProcessingActivityHistoric-5",
-      "ofa_position": 5,
-      "ofa_title": false,
-      "ofa_ui": "<div>\n  <div class=\"field\" data-field=\"gdprPacFinalitePrincipale\"><\/div>\n  <div class=\"field\" data-field=\"gdprPacFinaliteSous\"><\/div>\n<\/div>",
-      "ofa_icon": "fas/bullseye",
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-5~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-5",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-5",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-5~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-5",
-         "tsl_lang": "FRA",
-         "tsl_value": "Finalité(s)",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "GdprProcessingActivityHistoric-6",
-     "item": {
-      "ofa_name": "GdprProcessingActivityHistoric-6",
-      "ofa_position": 6,
-      "ofa_title": false,
-      "ofa_ui": "<div>\n  <div class=\"field\" data-field=\"gdprPacMesuresSecuTech\"><\/div>\n  <div class=\"field\" data-field=\"gdprPacMesuresSecuOrga\"><\/div>\n<\/div>",
-      "ofa_icon": "fas/lock",
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-6~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-6",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-6",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~GdprProcessingActivityHistoric-6~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "GdprProcessingActivityHistoric-6",
-         "tsl_lang": "FRA",
-         "tsl_value": "Sécurité",
          "row_module_id__mdl_name": "SimGdpr"
         }
        }
@@ -45159,7 +45453,7 @@
       "ofa_position": 5,
       "ofa_title": false,
       "ofa_ui": "<div class=\"row\">\n  <div class=\"col-sm-6\">\n    <div class=\"area\" data-area=\"SimEntEnt;simEntEntElementId\"><\/div>\n  <\/div>\n  <div class=\"col-sm-6\">\n    <div class=\"area\" data-area=\"SimEntEnt;simEntEntEnclosingId\"><\/div>\n  <\/div>\n<\/div>",
-      "ofa_icon": "[EXPR:[OBJECTICON:SimEntity]]",
+      "ofa_icon": "[EXPR:[OBJECTICON:GdprEntity]]",
       "row_module_id__mdl_name": "SimGdpr"
      },
      "links": [{
@@ -47740,300 +48034,6 @@
     },
     {
      "object": "ObjectFieldArea",
-     "userkey": "SimProcessingActivity-13",
-     "item": {
-      "ofa_name": "SimProcessingActivity-13",
-      "ofa_position": 1,
-      "ofa_title": true,
-      "ofa_ui": "<div class=\"row\">\n  <div class=\"col-sm-6\">\n    <div class=\"field\" data-field=\"simPacPcsId__simPcsName\"><\/div>\n  <\/div>\n  <div class=\"col-sm-6\">\n    <div class=\"field\" data-field=\"gdprPacName\"><\/div>\n  <\/div>\n<\/div>",
-      "ofa_icon": null,
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-13~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-13",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-13",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-13~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-13",
-         "tsl_lang": "FRA",
-         "tsl_value": "Définition",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "SimProcessingActivity-14",
-     "item": {
-      "ofa_name": "SimProcessingActivity-14",
-      "ofa_position": 14,
-      "ofa_title": false,
-      "ofa_ui": "<div class=\"row\">\n  <div class=\"col-sm-4\"><\/div>\n  <div class=\"col-sm-4\"><\/div>\n  <div class=\"col-sm-4\"><\/div>\n<\/div>",
-      "ofa_icon": null,
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-14~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-14",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-14",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-14~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-14",
-         "tsl_lang": "FRA",
-         "tsl_value": "SimProcessingActivity-14",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "SimProcessingActivity-2",
-     "item": {
-      "ofa_name": "SimProcessingActivity-2",
-      "ofa_position": 2,
-      "ofa_title": false,
-      "ofa_ui": "<div class=\"field\" data-field=\"gdprPacId\"><\/div>",
-      "ofa_icon": null,
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-2~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-2",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-2",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-2~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-2",
-         "tsl_lang": "FRA",
-         "tsl_value": "dsdq",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "SimProcessingActivity-4",
-     "item": {
-      "ofa_name": "SimProcessingActivity-4",
-      "ofa_position": 4,
-      "ofa_title": false,
-      "ofa_ui": "<div class=\"area\" data-area=\"SimActorPac;simActorPacPacId\"><\/div>",
-      "ofa_icon": "fas/user-circle",
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-4~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-4",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-4",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-4~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-4",
-         "tsl_lang": "FRA",
-         "tsl_value": "Acteurs",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "SimProcessingActivity-7",
-     "item": {
-      "ofa_name": "SimProcessingActivity-7",
-      "ofa_position": 7,
-      "ofa_title": false,
-      "ofa_ui": "<div>\n  <div class=\"area\" data-area=\"11\"><\/div>\n  <div class=\"area\" data-area=\"SimPacPvd;simPacPvdPacId\"><\/div>\n<\/div>",
-      "ofa_icon": "fas/database",
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-7~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-7",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-7",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-7~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-7",
-         "tsl_lang": "FRA",
-         "tsl_value": "Données",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "SimProcessingActivity-8",
-     "item": {
-      "ofa_name": "SimProcessingActivity-8",
-      "ofa_position": 8,
-      "ofa_title": false,
-      "ofa_ui": "<div>\n  <div class=\"area\" data-area=\"SimRecepPac;simRecepPacPacId\"><\/div>\n  <div class=\"area\" data-area=\"12\"><\/div>\n  <div class=\"area\" data-area=\"SimTOUPac;simTOUPacPacId\"><\/div>\n<\/div>",
-      "ofa_icon": "fas/users",
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-8~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-8",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-8",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-8~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-8",
-         "tsl_lang": "FRA",
-         "tsl_value": "Destinataire(s)",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
-     "userkey": "SimProcessingActivity-9",
-     "item": {
-      "ofa_name": "SimProcessingActivity-9",
-      "ofa_position": 9,
-      "ofa_title": true,
-      "ofa_ui": null,
-      "ofa_icon": null,
-      "row_module_id__mdl_name": "SimGdpr"
-     },
-     "links": [{
-      "object": "TranslateFieldArea",
-      "label": "Field area translation",
-      "icon": "img/system/translation",
-      "field": "tsl_id",
-      "list": [
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-9~ENU",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-9",
-         "tsl_lang": "ENU",
-         "tsl_value": "SimProcessingActivity-9",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       },
-       {
-        "object": "TranslateFieldArea",
-        "userkey": "Z~SimProcessingActivity-9~FRA",
-        "item": {
-         "tsl_typeFieldArea": "Z",
-         "tsl_id__ofa_name": "SimProcessingActivity-9",
-         "tsl_lang": "FRA",
-         "tsl_value": "SimProcessingActivity-9",
-         "row_module_id__mdl_name": "SimGdpr"
-        }
-       }
-      ]
-     }]
-    },
-    {
-     "object": "ObjectFieldArea",
      "userkey": "SimPvdPvd-3",
      "item": {
       "ofa_name": "SimPvdPvd-3",
@@ -48813,7 +48813,7 @@
        "field": "res_file_compiled",
        "mime": "text/javascript",
        "name": "SCRIPT.min.js",
-       "id": "4740",
+       "id": "5115",
        "object": "Resource",
        "rowid": "278"
       },
